@@ -1,0 +1,91 @@
+--- NETWORKS AND THEIR METHODS ---
+[dont forget to mention MS, HPLC etc. where necessary]
+
+Protein-Protein network
+Time    : mins to hours to days (only for functional and structural functions)
+Network : directed graphs (Boolean ODEs or Boolean network)
+Elements: nodes = protein; edges = ligand binding, rate constants
+Analysis: MS/MS or HLPC before MS to sort proteins (can also be modified); discovery or targeted.
+Special : Hubs (multi protein complexes that have many potential interaction partners)
+Protein-Protein interactions can also be transient (time scale smaller). Then, they need to come off again.
+
+
+Signalling network
+Time    : ms to sec (fast)
+Network : directed graphs
+Elements: nodes = receptors, ligands, second messengers, phosphorylating agents etc.; edges = strength of binding
+Analysis: MS/MS (must have a way to freeze the binding such that ligand-target is together)
+          FRET: to study the way and interaction partners of a ligand (or receptor if conformational changes occur)
+Special : Often connect different networks functionally together.
+Signalling networks are involved in regulatory networks. They also contain feedback loops, since the ligand has to come
+off again (not so much the case as in protein-protein or metabolite networks - these are mostly linear).
+
+
+Genetic network
+Time    : hours to days to lifetime (constitutively active genes)
+Network : Mostly undirected graphs or directed graphs if known (Boolean network)
+Elements: nodes = genes, DNA-interacting molecules: proteins/metabolites; edges = a line (unknown or known interaction)
+Analysis: Synthetic lethality in yeast (or other model organism), suppression analysis, deletion/insertion of transgene
+          (CRISPR), RNAi for graded measurements
+Special : Link inference is based on known interactions and non-interactions with a suitable similarity function (tensors).
+Genetic networks are on a more general note molecular networks. Deletion/insertion implicitly encodes TRUE/FALSE.
+mRNA networks have a bigger spectrum regarding activity states (translational bursting).
+
+
+Functional network
+Time    : all time scales
+Network : mostly undirected
+Analysis: Boolean ODEs, ...
+Elements: nodes = actuators: genes, molecules, outside effects; edges = strength of interaction (number)
+Special : Functional networks exist theoretically. Its basis are all other networks. Functional networks connect seemingly
+	  unrelated networks across organs, organisms and even habitats. In systems biology, it is only concerned with
+	  organ level at most (e.g. diabetes: liver, lipid/glucose metabolism, muscle cells and other cells, genes).
+	  Often, there is a hub protein/metabolite/gene that is involved in different process and thus is a node for
+	  several networks and contexts.
+
+Protein/metabolite-DNA network
+Time    : hours
+Network : directed (activation/inhibition)
+Analysis: Fluorescence for tracking, Boolean ODEs/networks for computation
+Elements: nodes = DNA/genes, proteins/metabolites; edges = interaction type
+Special : Regulate physiological changes in cells and transcription with TF.
+
+
+Metabolic network
+Time    : ms to mins
+Network : directed graph
+Analysis: FBA, MFA, 13C isotope labelling
+Elements: nodes = metabolites/enzymes; edges = strength of interaction
+Special : a quick perturbation in a complex system of a metabolite (increase of flux) allows us to model the situation
+	  with approx. constant time if all other changes take a much longer time.
+	  One can perform pertubation experiments by adding a new metabolite that activates another pathway and measure
+	  the response. Thus one can generate a hybrid model that describes the normal and perturbed case equally well
+	  (Pareto surface).
+FBA: interaction-based model (needs stoichiometry and steady state such that obj. function can be optimized with MM).
+No information about concentration only about their rate conversions (flux). Output gives any mathematically sound solution
+!= biologically sound solution => constraints and right obj. function needed.
+MFA: mechanism-based model (needs stoichiometry and k-values), good for dynamic models (growing cells/changing conditions).
+Gives information about absolute concentrations. Output is more biologically sound, but computationally expensive.
+
+
+RNAi network
+Time    : hours to lifetime (depends on implementation: if in genome, then life; else if in vector, then hours to months)
+Network : directed graph (inhibition)
+Analysis: Any method, since it influences proteins (mRNA does not produce protein) -> observe mutant phenotype
+Elements: nodes = si/miRNA, mRNA (main target) - protein (downstream target); edges = interaction type
+Special : RNAi networks are similar to functional networks in terms of thinking.
+
+
+Complex-Common Disease networks
+Time    : ms to lifetime
+Network : undirected mostly
+Analysis: Depends on level: GWAS for genes, FBA, epidemiological study, association study, RNAi, CRISPR
+Elements: nodes = every previous node; edges = functional, statistical inference via a similarity measure.
+Special : Makes heavy use of statistical methods and requires large data samples.
+	  Mono- and dizygotic twin studies needed to obtain concordance (environmental contribution on disease phenotype)
+Complex = polygenetic disease with substantial environmental influence. Common = 1 in 1000 persons affected.
+
+FURTHER NOTES
+Boolean networks fail for networks with varying time scales, but they can still give insights into systems behaviour.
+Boolean networks fail in signalling networks, RNAi networks and disease networks amongst others.
+mRNA has a half-life time of 2 mins. Its degradation is already initiated after 1 min.

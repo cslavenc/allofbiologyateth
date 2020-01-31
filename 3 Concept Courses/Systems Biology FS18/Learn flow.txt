@@ -1,0 +1,47 @@
+NOTES
+where do i use which model (topological, stoichiometric, kinetic, boolean) under which conditions
+examples for these models
+what is challenge 1 and 2 about: Chall_1 = [mechanistic/dynamic + globale network/steady state] challenge
+techniques to identify networks (like 13C, MS etc)
+Predict behavior from component concentrations. Which methods do you know?
+When is a perturbation desired?
+
+QUESTIONS WITH ELLA
+W2/42: What are explanations when no acceptable flux fit to the data can be achieved?
+W4/18: How do we get from 105 to 51 reactions only, that is how do we remove redundant reactions exactly?
+W9/02: 4 questions on MS from self study (answer as prep)
+W9/45: How can we exactly know where a phosphate is attached to a peptide and how to separate it from other phosphopeptides
+================================================================
+7.6.2018
+started going through slides.
+W0: doesnt seem to be that important
+W1: same - maybe look at minimal no. of C-molecules for building (11 in total)
+started with overview notes summary ("Essence of SB"). W2 done.
+
+11.6.
+W3 started.
+
+13.6.
+W3 finished.
+W4 finished.
+W5 finished.
+W6 finished.
+
+14.6.
+W7 finished.
+W8 finished.
+W9 finished.
+W10 finished.
+
+later
+rest finished.
+ 
+5.7.
+learnt summary once.
+solved example questions.
+
+6.7.
+did networks and their methods.
+
+15.7.
+repetition.

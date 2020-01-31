@@ -1,0 +1,1978 @@
+551-0326-00L (2017) 
+Concept Lectures in Cell Biology 
+
+Cell Biology 
+S. Werner, U. Auf dem Keller, 
+W. Kovacs, W. Krek, M. Schäfer, 
+U. Suter, A. Wutz 
+Institute of Molecular Health Sciences 
+ETH Zürich 
+
+http://www.mhs.biol.ethz.ch/ 
+
+
+
+Goals of the Lecture Series 
+
+
+1. 
+To prepare you for successful and efficient work in Cell Biology and related fields 
+• Learning how to ask relevant and important questions (i.e. develop hypotheses) 
+• Learning how to use the appropriate experimental strategies and 
+techniques in a research project 
+2. 
+To provide you with the background and context that foster cross-disciplinary 
+scientific thinking which is essential in modern Cell Biology 
+3. 
+Current Concepts in research in Cell Biology 
+
+Basis / Basics 
+
+
+"Molecular Biology of the Cell" 
+Alberts et al., 6th Edition 
+
+Disclaimer to my Presentations: “Peter et al.” means almost always “modified after Peter et al.” 
+Papers that are referred to in my lectures can be found on Moodle in full text (PDF) 
+
+
+
+Exam 
+
+
+Each lecturer will provide you with her/his 
+requirements for the exam individually 
+
+
+For my part 
+
+
+The contents of the lectures 
+form the basis of the exam 
+
+
+
+Introductory Remarks to My Lectures 
+
+
+• Some slides may contain major text: I will not always read through those slides 
+word-by-word, or I may even jump over them during lecturing, since they are often 
+designed as summaries (also concepts, questions) to support you in following 
+the general flow of the lectures (i.e. keeping the red line spanning the lectures) 
+• Active participation: Due to the size of your group of students, the heterogeneity in 
+your backgrounds, and the available time, my part of the course will contain mainly 
+lecturing, illustrated by some movies 
+Since discussion time will be limited, do not hesitate to ask questions, during the 
+break, or also by interrupting me during the lectures! 
+
+It would be great if you could go quickly through the slides of the previous 
+couple of lectures before the next ones start, at home, in the train, or elsewhere 
+(to keep up with the flow and to be able to participate actively continuously) 
+
+
+
+What is the Basis of a Successful Scientific Project? 
+
+
+•What would you like to know? 
+• Is this Question relevant and important? 
+•What are the Goals or Aims of your studies? 
+•How do you plan to get there? 
+•What are the Methods and Experimental Techniques: 
+a) that are available? 
+b) that are most appropriate to answer your question? 
+
+Key Questions 
+
+
+How do cells form a tissue? 
+
+
+(How do tissues form an organ?) 
+
+
+• In Development 
+• In Homeostasis 
+• In Regeneration 
+• In Diseases 
+How can we study this? 
+How are new hypotheses and concepts being developed? 
+
+
+
+The Chosen Model: The Nervous System (Amazing Numbers) 
+
+
+100 Billions (1011) Neurons 
+*100 Billions Glia Cells 
+1014 Synaptic Connections 
+>> Memories stored 
+(Human Brain: 2% of body 
+
+mass, uses 20% of resting 
+energy production) 
+
+
+*Regional CNS differences in the ratio of glia numbers to neurons 
+
+
+
+More Specific Model: Myelination of the Nervous System 
+
+
+
+Oligodendrocytes (CNS) 
+
+
+Schwann 
+Cells (PNS) 
+
+
+Main Purpose: Increase of speed and 
+efficiency at which neural impulses travel 
+along myelinated fibers: Improvement and 
+regulation of information transfer 
+
+Example Corpus Callosum 
+
+
+It takes about 30 ms for an action potential to 
+traverse the corpus callosum (which connects 
+the left and right cerebral cortex) through a 
+
+
+myelinated axon 
+
+
+It takes about 300 ms to do the same through 
+an unmyelinated corpus callosum axon 
+
+
+
+Swadlow et al., 1978; Fields et al., 2015 
+
+
+
+Nave and Werner, 2014 
+
+General Result of Myelination (CNS Axons Cross-Section) 
+
+
+Multiple cell membrane layers stacked together on top of each other in a repetitive manner 
+(PNS myelin looks comparable with minor structural differences) 
+
+
+
+Already in the Midst of Questions Over Questions… 
+
+
+• How is the system built and optimized for its function? 
+Anatomy / structure as basis of physiology 
+
+• Which cell types are involved with which function? 
+Cellular and molecular basis of functions 
+
+• How does the system develop? How is it maintained? 
+• How does the system regenerate after insults (injury, disease)? 
+• Is the system plastic during development and / or adulthood? 
+If yes, does this have functional consequences? 
+• Is this relevant for diseases affecting the tissue? 
+
+Specific Goal of the Coming Lectures 
+
+
+• We will use Myelination and Myelinated Neurons (Axon-Glia 
+Interactions), and Diseases that are Associated with Myelinated 
+Neurons, as Examples to obtain and discuss a General Conceptual 
+Framework of how to analyze and understand functionally complex 
+events of cellular interactions in vertebrate / mammalian tissues in 
+health and disease 
+• This knowledge and way-of-thinking is, conceptually, also 
+applicable as “General Theme” to other cells, tissues and 
+organs (with variations) 
+• Particular questions: What / how can we learn for / from diseases? 
+
+What is the Significance of 
+the Research Topic? 
+
+
+Why Are the Studies Relevant? 
+
+
+
+How Much to Invest at which Level? 
+
+
+Francis Collins, Head of NIH, 2012 
+
+“Our second lesson is often easier said than done: get to the root 
+of the problem. When confronted with heartbreaking human need 
+and urgent clinical challenges, it is tempting to race ahead to exploring 
+therapeutic possibilities before gaining a firm, or even tentative, grasp 
+on the molecular roots of a disease. But much time, money, and, 
+ultimately, lives may be lost if a translational research team rushes into 
+clinical trials without a basic understanding of the molecular mechanisms 
+underlying the disease in question” (My addition :…and without a 
+thorough understanding of the development, structure and normal 
+function of the affected tissue). 
+
+Symbiotic and converging use of disease-oriented and basic-science 
+approaches (i.e. to learn from each research direction) is the key to success 
+
+
+Gordon et al., 2012 
+
+
+
+Induced Pluripotent Stem Cells (iPS cells) 
+
+
+No immune rejection! 
+Found by screening of 
+combinations of factors 
+that were known from 
+basic science to be 
+critical for the biology 
+of Embryonic Stem Cells 
+
+Cell Reprogramming in Neuroscience (Status: End 2015) 
+
+www.nature.com/nrn/posters/ipsc 
+
+
+
+Sources and Targets of Human Glial Progenitor Cells 
+
+
+1. 2. 
+
+(Myelinating Cell 
+Progenitors) 
+
+
+Osario and Goldman, 2016 
+
+
+
+What is the Significance of Myelination? 
+
+
+
+What is the Significance of Myelination (I)? 
+
+
+CNS: 
+
+Major Diseases 
+• Leukodystrophies (genetic myelin deficiencies) 
+• Multiple Sclerosis (most prevalent neurodegenerative disease in young adults) 
+• Neonatal White Matter Disorders (early preterm-born: Hypoxia, cerebral palsy) 
+• Amyotrophic Lateral Sclerosis (ALS: Metabolic support of neurons / axons) 
+• Psychiatric Disorders (schizophrenia / neural circuit abnormalities) 
+• Memory Decline in Aging (correlated with reduced amounts of myelin) 
+• Regulation of Repair: Spinal cord injury, neural regeneration (trauma), stroke 
+PNS: 
+
+• 
+Peripheral Neuropathies (Inherited, inflammation, toxins, diabetes; affect motor 
+and / or sensory system; often progressing with age) 
+
+What is the Overall Significance of Myelination (II)? 
+
+
+General Broad Summary 
+Vertebrate myelination is an evolutionary 
+advancement that is essential for motor, 
+sensory, and higher order 
+cognition function 
+
+
+Bercury and Macklin, 2015 
+
+
+
+What is the Basic Significance of Myelination (III)? 
+
+
+Homeostasis / Plasticity of the Nervous System 
+• 
+Myelination enhances nerve conduction velocity 
+• 
+Myelinating glia provide support to neurons / axons (trophic, metabolic) 
+• 
+Myelinating oligodendrocytes regulate neuronal network behavior, and how neural 
+circuits operate, by an intricate cross talk with neurons / axons, involving also 
+neuronal activity (recent discovery) 
+• 
+Oligodendrocyte-derived myelin can grow, remodel, and appears to be plastic, even 
+in the adult, also modulated by environmental factors, with functional consequences 
+for the neural circuits involved (recent discovery) 
+• 
+Some learning and training are accompanied by adaptive myelination and neuronal 
+plasticity, i.e. myelination increases and neural circuits may get strengthened, 
+and / or stabilized, and / or fine tuned (recent discovery) 
+• 
+Myelination is also likely to restrict neural plasticity involving factors that inhibit 
+neuronal growth i.e. puts the final touch on circuit crystallization (recent discovery) 
+De Hoz and Simons, 2014 
+
+
+J. Neurosci. (2014), 34,14777-14782 
+Alcohol Binge Drinking During Adolescence or Dependence During 
+Adulthood Reduces Prefrontal Myelin in Male Rats 
+Vargas et al. 
+
+Teen binge drinking is associated with low frontal white matter integrity and increased risk of 
+alcoholism in adulthood. This neuropathology may result from alcohol exposure or reflect a 
+pre-existing condition in people prone to addiction. Here we used rodent models with 
+documented clinical relevance to adolescent binge drinking and alcoholism in humans to test 
+whether alcohol damages myelinated axons of the prefrontal cortex. In Experiment 1, outbred 
+male Wistar rats self-administered sweetened alcohol or sweetened water intermittently for 2 
+weeks during early adolescence. In adulthood, drinking behavior was tested under 
+nondependent conditions or after dependence induced by 1 month of alcohol vapor 
+intoxication/withdrawal cycles, and prefrontal myelin was examined 1 month into abstinence. 
+Adolescent binge drinking or adult dependence induction reduced the size of the anterior 
+branches of the corpus callosum, i.e., forceps minor (CCFM), and this neuropathology 
+correlated with higher relapse-like drinking in adulthood. Degraded myelin basic protein in the 
+gray matter medial to the CCFM of binge rats indicated myelin was damaged on axons in the 
+mPFC. In follow-up studies we found that binge drinking reduced myelin density in the mPFC 
+in adolescent rats (Experiment 2) and heavier drinking predicted worse performance on the Tmaze 
+working memory task in adulthood (Experiment 3). These findings establish a causal 
+role of voluntary alcohol on myelin and give insight into specific prefrontal axons that are both 
+sensitive to alcohol and could contribute to the behavioral and cognitive impairments 
+associated with early onset drinking and alcoholism. 
+
+
+The prefrontal cortex (PFC) is the cerebral cortex which covers the front part of the frontal 
+lobe. 
+There is an integral link between a person's personality and the functions of the prefrontal 
+cortex. This brain region has been implicated in planning complex cognitive behavior, 
+personality expression, decision making, and moderating social behavior. The basic activity of 
+this brain region is considered to be orchestration of thoughts and actions in accordance with 
+internal goals (concentration, orientation, abstracting ability, judgment, and problem solving 
+ability, social behavior) 
+The most typical psychological term for functions carried out by the prefrontal cortex area is 
+executive function. Executive function relates to abilities to differentiate among conflicting 
+thoughts, determine good and bad, better and best, same and different, future consequences 
+of current activities, working toward a defined goal, prediction of outcomes, expectation based 
+on actions, and social "control" (the ability to suppress urges that, if not suppressed, could lead 
+to socially unacceptable outcomes) 
+Wikipedia 
+The prefrontal cortex (PFC) is the cerebral cortex which covers the front part of the frontal 
+lobe. 
+There is an integral link between a person's personality and the functions of the prefrontal 
+cortex. This brain region has been implicated in planning complex cognitive behavior, 
+personality expression, decision making, and moderating social behavior. The basic activity of 
+this brain region is considered to be orchestration of thoughts and actions in accordance with 
+internal goals (concentration, orientation, abstracting ability, judgment, and problem solving 
+ability, social behavior) 
+The most typical psychological term for functions carried out by the prefrontal cortex area is 
+executive function. Executive function relates to abilities to differentiate among conflicting 
+thoughts, determine good and bad, better and best, same and different, future consequences 
+of current activities, working toward a defined goal, prediction of outcomes, expectation based 
+on actions, and social "control" (the ability to suppress urges that, if not suppressed, could lead 
+to socially unacceptable outcomes) 
+Wikipedia 
+
+Specific Questions and Goals of the Coming Lectures 
+
+
+• How does the process of myelination achieve its critical functions 
+and how is this system regulated? 
+• How were the current concepts developed that underlie the 
+knowledge about myelination and its function? How are they still 
+being refined? What are the major open questions in this 
+context? 
+• 
+Particular question: What (and how) can we learn from diseases 
+that affect myelinated structures about the basic function of the 
+system? And Vice Versa: What can we learn from basic studies 
+for potential treatments of such diseases? 
+
+The Basis / Basics 
+
+
+Functional Anatomy and Physiology 
+A Cell Biology Point of View 
+
+
+
+How Do Axons Interact with Myelinating Cells? 
+CNS - Oligodendrocytes PNS - Schwann Cells 
+
+
+
+Internodes 
+
+
+Myelination 
+
+
+Nodes of Ranvier 
+
+
+Most Oligodendrocytes have 
+20- 60 myelinating processes 
+One Schwann cell 
+forms one internode 
+
+Structure is a critical determinant of function 
+
+
+
+Structural Organization of a Myelinated Neuron 
+
+
+Initiation and Propagation of Action Potential 
+
+
+
+AIS: Axon initial segment 
+
+Red: Unmyelinated axon areas enriched in voltage-gated sodium channels (Nav) 
+
+Freeman et al., 2015 
+
+
+
+Impulse Conduction in Unmyelinated Axons 
+
+
+The red arrows show the flow of action currents in local circuits into the active 
+region of the membrane 
+
+In unmyelinated fibers, the circuits flow through the adjacent piece of membrane 
+
+
+Action Potential Propagation 
+
+
+
+Principles of Neurobiology, 2015 (I) 
+
+
+
+Impulse Conduction in Unmyelinated (top) and 
+Myelinated (bottom) Nerve Fibers 
+
+
+
+The red arrows show the flow of action currents in local circuits into the active region of the 
+membrane. In unmyelinated fibers, the circuits flow through the adjacent piece of membrane; in 
+myelinated fibers, the circuit flow jumps to the next node. 
+
+Rasband and Macklin, 2012 
+
+
+What Are the Main Effects of Myelination 
+to Achieve Fast Nerve Conduction (I)? 
+
+
+Myelin is an electrical insulator, although its function of facilitating conduction in axons 
+has no exact analogy in electrical circuitry. In unmyelinated fibers, impulse conduction 
+is propagated by local circuits of ion current that flow into the active region of the 
+axonal membrane, through the axon, and out through adjacent sections of the 
+membrane. These local circuits depolarize the adjacent piece of membrane in a 
+continuous sequential fashion. In myelinated axons, the excitable axonal membrane is 
+exposed to the extracellular space only at the nodes of Ranvier; this is the location of 
+sodium channels. When the membrane at the node is excited, the local circuit 
+generated cannot flow through the high-resistance sheath and therefore flows out 
+through and depolarizes the membrane at the next node, which might be 1 mm or 
+farther away. The low capacitance of the sheath means that little energy is required to 
+depolarize the remaining membrane between the nodes, which results in an increased 
+speed of local circuit spreading. Active excitation of the axonal membrane jumps from 
+node to node; this form of impulse propagation is called saltatory conduction (Latin 
+saltare, “to jump”). Such movement of the wave of depolarization is much more rapid 
+than is the case in unmyelinated fibers. Furthermore, because only the nodes of 
+Ranvier are excited during conduction in myelinated fibers, sodium flux into the nerve 
+is much less than in unmyelinated fibers, where the entire membrane is involved. 
+
+Rasband and Macklin, 2012 
+
+
+
+Action Potential Followed Along a Myelinated Fiber 
+
+
+
+
+Key to Understanding: 
+
+
+Structure is a 
+Major Determinant of Function 
+
+
+
+Oligodendrocyte – Neuron (CNS Myelin) Structure Overview 
+
+
+
+Snaidero and Simons, 2014 
+
+
+
+Basic Question 
+
+
+What is the mechanism by which an 
+oligodendrocyte extends its plasma 
+membrane to wrap axons and 
+to generate the multilayered 
+compact myelin sheath 
+around axons? 
+
+
+
+Nave and Werner, 2014 
+
+
+Differentiation of Committed Oligodendrocyte Progenitor cell (OPC) Into 
+Mature Myelinating Oligodendrocyte as a Series of Cellular Processes 
+
+
+Myelin outgrowth occurs at the innermost tongue and at the lateral edges 
+A. B. C. D. 
+E. 
+F. 
+Some small 
+incisures 
+remain, in 
+particular in 
+myelin 
+associated 
+with large axons 
+Incisure opening is 
+regulated by 
+phosphatidylinositol-
+(3,4,5)-triphosphate 
+(PIP3) levels 
+
+Model of the Directions of How Oligodendrocyes / 
+Myelin Wrap Around Axons 
+
+
+Incisures (cytoplasmic 
+channels spiraling through 
+developing myelin): Tracks 
+for the delivery of newly 
+synthesized membranes 
+(vesicles) to the 
+growing tip 
+
+
+Leading edge of 
+the inner tongue 
+drives myelination 
+
+
+
+Two distinct, but 
+coordinated motions 
+
+
+1. Wrapping of the leading edge 
+at the inner tongue around the 
+axon underneath the previously 
+deposited membrane 
+(i.e. build up of more wraps) 
+2. 
+Lateral extension of myelin 
+membrane layers toward the 
+nodal regions 
+(i.e. build up of longer sheaths) 
+Snaidero and Simons, 2014; Simons and Nave, 2015 
+
+
+
+Current Model of CNS Myelination 
+
+
+
+Chang et al., 2016 
+
+
+
+Conceptual Steps* Leading to CNS Myelination 
+
+
+1. Proliferation and migration of oligodendrocyte precursor cells 
+(OPCs) in white matter tracts 
+2. Recognition of target axons and axon–glia signaling 
+3. Differentiation of OPCs into myelinating oligodendrocytes 
+4. Membrane outgrowth and axonal wrapping 
+5. Trafficking of membrane components 
+6. Myelin compaction (extrusion of cytoplasm) 
+7. Nodes of Ranvier formation 
+*Analytical (intellectual) dissection of individual parts of the process: “What to study” 
+
+Simons and Nave, 2015 
+
+
+
+Actin Dynamics at Different Stages of CNS Myelination 
+
+
+
+Actin depolymerization 
+
+F-actin predominates 
+
+(G-actin) predominates 
+
+The leading edge of the inner turn expresses F-actin. Actin disassembly facilitates membrane 
+spreading and supports possibly iterative cycles of polymerization / depolymerization 
+to drive the protrusion (controversial) 
+
+
+
+Jayshree and Salzer, 2015 
+
+
+
+http://www.sciencedirect.com/science/article/pii/S0092867413015304 Snaidero et al., 2014 
+
+
+
+How is Proper Myelin Compaction Achieved 
+as a Requirement for Correct Function? 
+
+
+
+Anatomy of the Neuromuscular System 
+
+
+Large Caliber Motor and Sensory Axons Are Myelinated 
+
+
+PNS (Myelin formed by Schwann cells) 
+
+
+CNS (Myelin formed by Oligodendrocytes) 
+Burgess et al., 2009 
+
+
+
+Multi-Layered Appearance / Compaction of PNS Myelin* 
+
+
+
+IPL: Intraperiod line 
+MDL: Major dense line 
+
+SLI: 
+Schmidt-Lanterman Incisures (cytosolic channel 
+(spiral-shaped) of uncompacted myelin transversing 
+compact myelin); not prominently 
+present in adult CNS myelin
+
+ 
+(cytoplasmic channels) 
+*CNS compact myelin structure is 
+comparable, with minor differences 
+
+Nave and Werner, 2014 
+
+
+Multi-Layered PNS Myelin Compaction 
+
+
+
+IPL: Intraperiod line 
+MDL: Major dense line 
+
+
+
+P0: Protein Zero 
+(IgCAM) 
+
+
+MBP: Myelin Basic 
+Protein 
+
+
+
+Salzer, 2015; Nave and Werner, 2014 
+
+
+
+Peripheral Nerve “Myelin” Without P0 Protein 
+
+
+
+Möbius et al., 2016 
+
+
+
+Intracellular Compaction of CNS Myelin (MDL) 
+Is Driven by Increasing MBP Concentration 
+
+
+• Compaction starts from outside, 
+progressing to the inside 
+• At increased concentration, MBP binds 
+apposed membranes together 
+Mechanism of IPL / extracellular membrane compaction 
+in the CNS remains largely unclear (no P0 protein) 
+
+Chang et al., 2016 
+
+
+
+CNS (Optic) Nerve Without MBP (Shiverer Mouse) 
+
+
+
+(PNS myelin is virtually normal in Shiverer mice; compensation by highly basic C-terminus of P0) 
+
+
+Möbius et al., 2016 
+
+
+
+What Is the Molecular Composition of Myelin? 
+CNS / PNS? 
+
+
+How Does the Composition Determine 
+Structure and Function? 
+
+
+
+Molecular Anatomy of Myelin 
+
+
+
+SDS-Gels of CNS Myelin versus PNS Myelin (Proteins) 
+
+CNS PNS 
+
+
+De Monasteiro-Schrader et al., 2012 Patzig et al., 2011 
+
+
+
+Different Developmental Origin of Myelinating Cells 
+
+
+Oligodendrocyte Generation from Neurepithelium 
+
+
+
+Three sequential waves of OPCs (OPC-1, OPC-2 and Two waves of OPCs emanate from the 
+OPC-3) are generated during embryo development ventral or dorso-lateral regions of the 
+from different regions of the forebrain ventricular zone spinal cord in the embryo. A third wave 
+
+OPC: Oligodendrocyte-progenitors (cells) / -precursors (cells) 
+begins after birth 
+
+Rowitch and Kriegstein, 2010 
+
+
+Schwann Cells Are Neural Crest Stem Cell-Derived 
+
+
+Mid-Gestation 
+Schwann Cells 
+
+
+
+Venn Diagram Comparison of Myelin Proteins in the CNS Versus PNS 
+
+
+Mass-Spectrometry 
+
+De Monasteiro-Schrader et al., 2012 
+
+
+Relative Abundance of Dominant Myelin Proteins / Disease Relevance 
+
+
+PNS 
+PNS 
+CNS 
+CNS 
+ND: Not detected 
+
+Nave and Werner, 2014 
+
+
+Myelination: Large Amounts of Lipid and 
+Membrane Production Required 
+
+
+• During myelination, the membrane surface area has to expand several thousand-fold 
+Birth-Adult comparison of myelinating Schwann cell 
+
+
+• Myelin has a high lipid-to-protein ratio compared to other cell membranes 
+-Approx. 70 - 80% lipids / 20 - 30% proteins by dry weight (species-dependent) 
+-Enrichment in cholesterol and glycosphingolipids 
+Chrast et al., 2011 
+
+
+
+Critical Relevance of Lipid Regulation in Myelination 
+
+
+-C 
+Squalene Synthase- 
+(Cholesterol)-deficiency in 
+Schwann cells causes hypomyelination 
+
+
+
+Cholesterol, de novo synthesized 
+in myelinating glia, is required for 
+myelin growth and compaction 
+(PNS and CNS) 
+Saher et al., 2009; Schmitt et al., 2014 
+
+
+
+Myelinated Peripheral Nerves Consist 
+Not Only of Myelinated Axons 
+
+
+Myelinated Peripheral Nerves as “Organs” 
+Structure and Function 
+
+
+
+Architecture of an Adult Peripheral Nerve 
+
+
+Teased Nerve 
+
+
+Jessen et al., 2015 
+
+Teased Nerve Fiber: Internodal Segment 
+
+
+
+(From Sciatic Nerve) 
+
+
+Nave and Werner, 2014 
+
+
+
+What is the Cellular Basis of 
+Saltatory Nerve Conduction 
+in Myelinated Fibers? 
+
+
+
+What Are the Main Effects of Myelination 
+to Achieve Fast Nerve Conduction (II)? 
+
+
+1. 
+Myelination leads to increased effective resistance, decreased effective 
+capacitance of myelinated axons (“insulation of the axon”) 
+2. (PNS*) 
+v v v 
+Basis of Saltatory Conduction 
+*CNS structure 
+is comparable 
+
+
+
+Conceptual Example of Cell-Cell Interactions 
+The myelinating Schwann cell determines the organization 
+of the axonal membrane by direct physical interactions 
+(CNS oligodendrocytes organize axons in a comparable way) 
+N: Node of Ranvier P: Paranode 
+JXP 
+JXP: Juxtaparanode 
+v v v 
+
+Adhesion Proteins, Cytoskeleton Proteins, ECM and Connecting 
+Proteins Determine the Integrity and Structure of the Node of Ranvier 
+
+
+
+CAM, cell adhesion molecule; ECM, extracellular matrix; JXP, juxtaparanode; PNJ, paranodal junction 
+(Note the PNS / CNS difference at the Node) Zollinger et al., 2015 
+
+
+
+Are Paranodal Junctions Functionally Relevant? 
+
+
+
+Schema of Myelinated Domains of Myelinated Neuron 
+
+
+
+Arancibia-Carcamo and Attwell, 2014 
+
+
+
+Caspr Knock-Out (NULL) Mouse (PNS*) 
+
+
+
+• Paranodal shift of Kv1.1 channels in Caspr1 -/- mutants 
+• Paranodal, Septate-like Junctions act as fence in axonal membrane 
+Lack of Septate- 
+like Junctions in 
+Caspr -/- mutants: 
+Paranodal Organization (PNS/CNS) 
+
+Decreased Nerve Conduction Velocity 
+
+*CNS shows a comparable phenotype 
+
+Bhat et al., 2001; Buttermore et al., 2013 
+
+
+Hum. Mol. Genet. (2014), 23, 2279-2289 
+
+Mutations in CNTNAP1 (CASPR) and ADCY6 Are Responsible for Severe 
+Arthrogryposis Multiplex Congenita With Axoglial Defects 
+
+
+Laquérriere et al. 
+
+Non-syndromic arthrogryposis multiplex congenita (AMC) is characterized by multiple 
+congenital contractures resulting from reduced fetal mobility. Genetic mapping and whole 
+exome sequencing (WES) were performed in 31 multiplex and/or consanguineous 
+undiagnosed AMC families. Although this approach identified known AMC genes, we here 
+report pathogenic mutations in two new genes. Homozygous frameshift mutations in 
+CNTNAP1 were found in four unrelated families. Patients showed a marked reduction in 
+motor nerve conduction velocity (<10 m/s) and transmission electron microscopy (TEM) of 
+sciatic nerve in the index cases revealed severe abnormalities of both nodes of Ranvier 
+width and myelinated axons. CNTNAP1 encodes CASPR, an essential component of 
+node of Ranvier domains which underlies saltatory conduction of action potentials along 
+the myelinated axons, an important process for neuronal function. A homozygous 
+missense mutation in adenylate cyclase 6 gene (ADCY6) was found in another family 
+characterized by a lack of myelin in the peripheral nervous system (PNS) as determined 
+by TEM. Morpholino knockdown of the zebrafish orthologs led to severe and specific 
+defects in peripheral myelin in spite of the presence of Schwann cells. ADCY6 encodes a 
+protein that belongs to the adenylate cyclase family responsible for the synthesis of cAMP. 
+Elevation of cAMP can mimic axonal contact in vitro and upregulates myelinating signals. 
+Our data indicate an essential and so far unknown role of ADCY6 in PNS myelination 
+likely through the cAMP pathway. Mutations of genes encoding proteins of Ranvier 
+domains or involved in myelination of Schwann cells are responsible for novel and severe 
+human axoglial diseases. 
+
+
+Non-Syndromic Arthrogryposis Multiplex Congenita 
+
+
+
+• 
+Facial diplegia 
+(paralysis of both sides 
+of the face) 
+• 
+Distal joint retractions 
+(contractures due to 
+reduced fetal mobility) 
+• Usually lethal within the 
+first weeks postnatally 
+ADCY6 mutants; comparable phenotype to CNTNAP1 (CASPR) mutants 
+
+Laquérriere et al., 2014 
+
+
+Adhesion Proteins, Cytoskeleton Proteins, ECM, and Connecting (Often Scaffolding) 
+Proteins Determine the Integrity and Structure of the Node of Ranvier (CNS) 
+
+
+Often: 
+Astrocyte 
+process on 
+top of Node 
+Arancibia-Carcamo and Attwell, 2014 
+
+
+
+Analogy to Structural Organization of Synapses 
+
+
+
+• Close membrane connections to be maintained 
+• Pre- and post-synaptic accumulation of electron-dense material 
+
+(Partial) Molecular Organization of Synapse 
+
+
+
+Figure 19-22c Molecular Biology of the Cell (© Garland Science 2008) 
+
+
+Summary of Main Cellular Basis of Fast Nerve Conduction 
+
+
+
+Physical properties of myelinated axon fibers plus strict organization 
+of nodal areas by myelinating glia – axon interactions 
+
+
+
+Summary of the Functions of Interactions Between 
+Axons and Myelinating Cells at the Node of Ranvier 
+
+
+• 
+Define the Node as an area free of the compact glial sheath 
+• 
+Localize voltage-gated Na+ (Nav) channels in the axonal 
+membrane at the node (demyelination causes usually 
+re-distribution of Na+ channels along the axon and reduced 
+nerve conduction) 
+• 
+Localize axonal Kv channels on either side of the node (critical) 
+• 
+Attach the ends of the myelin sheaths to the axon on either 
+side of the node so that current cannot easily pass under the 
+myelin (which would negate the membrane capacitance-reducing 
+and resistance-increasing effects) 
+Arancibia-Carcamo and Attwell, 2014 
+
+
+
+Pathologies of Nodes of Ranvier in Multiple Sclerosis 
+
+
+
+Normal physiology: Paranodal 
+junctions segregate Nav from 
+Kv channels 
+Multiple sclerosis: Node 
+elongation with loss of NF155 
+may allow aberrant extracellular 
+current flow to juxtaparanode 
+(aberrant activation of Kv 
+channels) 
+
+Multiple sclerosis: Node 
+and paranode elongation with 
+redistribution of Kv into 
+paranode 
+
+Multiple sclerosis: Myelin 
+retraction, paranodal loop 
+eversion, node lengthening and 
+mixing of Nav, Kv and Caspr 
+
+Arancibia-Carcamo and Attwell, 2014 
+
+
+
+Myelination Appears to Be of Obvious 
+Physiological Importance 
+
+
+But When and Why Does Myelination 
+Make Real Sense? 
+
+
+
+Why and When Does Myelination Make Sense? 
+
+
+
+(PNS) 
+Fiber Diameter (µm) 
+Conduction Velocity (m/s) 
+Myelinated 
+Non-Myelinated 
+Strategy to increase speed of nerve impulses 
+
+without increasing axonal calibers tremendously 
+
+
+Reaches Optimum 
+
+Vertebrates: 
+
+• Evolutionary Advantage 
+• Limited Body Size 
+• Energetically Favorable 
+Thresholds of Fiber / Axonal 
+Calibers for Myelination: 
+
+PNS: 1 µm / (CNS: 0.2 – 0.8 µm) 
+
+Squid 
+
+
+Rushton, 1951; Hartline and Colman, 2007 
+
+
+
+Recent Surprise in CNS Myelination Research 
+
+
+In the CNS, it was known that there is some variability 
+to the rule (i.e. some overlaps of myelinated and 
+non-myelinated axons of comparable small calibers, 
+or occasionally myelin thickness of some axons not 
+perfectly fitting to the proportionality rule), but it was 
+always assumed that a given healthy axon which 
+has reached myelination competency (i.e. a 
+caliber above 0.8 µm) is myelinated all the 
+way along the axon…
+but then, Tomassy et al., 2014 published the following: 
+
+Distinct Profiles of Myelin Distribution Along Single Axons of 
+Some Pyramidal Neurons in the Neocortex 
+
+
+
+Serial EM reconstructions 
+of neurons with long 
+unmyelinated initial 
+segments (left) or 
+intermittent myelin (right) 
+Unmyelinated axon tracts 
+are highlighted in green 
+and myelinated tracts in 
+magenta. Yellow, selected 
+synapses mapped on the 
+intermittently (un-) 
+myelinated axon 
+Ax, axon; Nu, nucleus; 
+Psd, postsynaptic density 
+High-resolution 
+rendering of three 
+representative 
+neurons displaying 
+different 
+myelination modes 
+
+Native positions of 
+neurons are 
+preserved in the 
+rendering 
+
+Arrowheads 
+mark the 
+boundaries of 
+myelinated tracts 
+(white) 
+
+Note that axons have approximately the same caliber 
+
+
+Tomassy et al., 2014 
+
+
+
+Why Has This Not Been Detected Before? 
+Technical Advances Drive Research 
+
+
+And occasionally also $$$... 
+
+
+
+The Connectome Project 
+
+
+
+
+Two Apical Dendrite Segments of Layer 5 Pyramidal 
+Neurons in the Somatosensory Cortex 
+
+
+
+Swanson and Lichtman, 2016 
+
+
+
+Mapping of Node of Ranvier 
+
+
+Astrocytes 
+
+
+Fields et al., 2015 
+
+
+
+Major Findings by Tomassy et al., 2014 and Questions Raised 
+
+
+• Adult neurons located in pyramidal neurons in layers II/III displayed a patchwork 
+pattern of myelinated segments along the axons 
+• 
+Long unmyelinated stretches were found to be intercalated in between the 
+different internodes (i.e. myelin segments) 
+• Unusually long unmyelinated stretches (AIS) were present between the axon 
+hillock (i.e. axon beginning) and the start of the first internode 
+Consequences for axonal conduction: 
+
+• The position of the first internode may affect the arrangement of the axon initial 
+segment, which in turn regulates action potential initiation and modulation 
+• Large unmyelinated gaps along the axons will increase their capacitance and 
+thereby modify the speed of conduction 
+Some open questions: 
+
+• What regulates myelination (or rather “non-myelination”) of pyramidal neurons? 
+• What is the consequence for the network? Conductivity? Stability? Plasticity? 
+(e.g. late “de novo” myelination could assure myelination adjusted to needs) 
+• Is this phenomenon common, also in other regions of the CNS? 
+
+In the PNS, the Initial Myelination Decision 
+Is Optimized and Fixed 
+
+
+• Axons which benefit from myelination for nerve conduction 
+(i.e. with a caliber above 1 µm) are myelinated in the PNS 
+• Vice Versa: Myelinated axons with a size where myelination is 
+not beneficial for nerve conduction (i.e. with an axonal caliber 
+below 1 µm) are usually not present in the PNS 
+It follows that the decision process of which axons get myelinated 
+(i.e. determining the axonal caliber threshold and the 
+responsible regulatory signaling) needs to be tightly 
+controlled to achieve optimized function 
+
+
+
+Myelin Thickness is Roughly Proportional to Axon Caliber 
+
+
+Myelin Thickness 
+PNS: 1 µm / CNS: 0.2 - 0.4 µm 
+PNS (and most 
+of the time, also 
+in the CNS) 
+
+
+
+Myelinated peripheral nerve Axon diameter 
+
+
+Large caliber axons have thinker myelin sheaths than small caliber axons 
+
+
+
+Historical Perspective J. Physiol. (1951), 115, 101-122 J. Physiol. (1951), 115, 101-122 
+“ 
+“ (Steve Waxman) 
+* * 
+Correct Myelin Geometry is Critical in Health and Disease 
+
+Too Thin Myelin: Reduced Nerve Conduction 
+Too Thick Myelin: Reduced Nerve Conduction, Unstable Myelin 
+
+
+In the PNS, myelin thickness is highly optimized 
+In the CNS, myelin is slightly thinner than the theoretical optimum. i.e. 
+there is some but limited room for increasing myelin and improving 
+conduction velocity before the critical (optimal) thickness is reached 
+*usually correlated Waxman, 1997 
+
+
+
+Myelin Thickness of a Given Axon Is Highly 
+Optimized and Fixed in the PNS 
+
+
+• Myelin sheath thickness is roughly proportional to the 
+axonal caliber 
+• This arrangement is optimized to maximize conduction 
+It follows that also the control of myelin thickness (i.e. determining which 
+axonal caliber should be associated with which thickness of myelin, 
+together with the associated regulatory signaling) needs to be 
+tightly controlled to obtain optimized function 
+
+
+
+Correct Myelin Geometry is Critical in Health and Disease 
+
+
+
+Too Thin Myelin: Reduced Nerve Conduction 
+Too Thick Myelin: Reduced Nerve Conduction 
+(Secondary: Unstable Myelin) 
+
+Examples of Diseases: What can we learn from them? 
+
+
+• Demyelinating Neuropathies: Demyelination / partial remyelination 
+• Dysmyelinating Neuropathies: Abormal myelination / (demyelination) 
+
+Myelin Thickness Abnormalities in PMP22-Based Inherited Neuropathies 
+
+
+Normal HNPP CMT1A Severe CMT1 
+PMP22: Normal Deletion (heteroz.) Duplication (heteroz.) Point-Mutation (heteroz.) 
+
+
+Suter and Scherer, 2003 
+
+
+
+Typical Pathological Findings in Demyelinating Neuropathies 
+
+
+Relation to Nerve Conduction 
+
+
+
+• Almost normal myelin thickness / conduction (well re-emyelinated after de-myelination) 
+• Thinly myelinated / reduced conduction (limited re-myelination after de-myelination) 
+•De-myelinated / reduced or blocked conduction 
+(not re-myelinated) 
+Note: One axon has multiple internodes 
+that might be differently affected 
+
+
+
+Red: High Membrane Currents 
+
+Freeman et al., 2015 
+
+
+Includes 
+Distal 
+Sensory Loss 
+
+
+CMT1A Normal 
+
+Demyelinating Hereditary Motor and Sensory Neuropathies 
+(Charcot-Marie-Tooth Disease, CMT) 
+Reduced Nerve Conduction Velocity 
+
+Bernd Rautenstrauss 
+
+
+
+The Name Providers 
+
+
+Charcot Marie Tooth 
+
+
+
+Neurologists in 19th Century; first description of disease 
+
+
+
+* 
+
+
+1:2500 people affected by CMT, about 150,000 in the USA 
+*Causes Hereditary Neuropathy with Liability to Pressure Palsy 
+
+
+
+HNPP (deletion) 
+CMT1A (duplication) 
+Chromosome 17 
+HNPP (deletion) 
+CMT1A (duplication) 
+Chromosome 17 
+Steven Scherer 
+
+
+
+Mutant PMP22 Protein is Retained Within the Cell 
+
+
+Cell expresses normal (wild type) PMP22 Cells express mutant PMP22 
+
+
+
+Defective intracellular transport is a common disease mechanism 
+
+Green: PMP22 
+Red: Marker protein for endoplasmic reticulum 
+
+Naef et al., 1997 
+
+
+
+PMP22-Transgenic Rats as Genetic Model for CMT1A 
+
+
+
+CMT1 rats carry three additional 
+copies of the PMP22 gene 
+
+
+Sereda et al., 1996 
+
+
+
+Demyelination in CMT1A Rats 
+
+
+T: Thinly myelinated axon 
+OB: Onion bulb formations 
+A: Amyelinated axon 
+OB 
+Sereda et al., 1996; Fledrich et al., 2014 
+
+
+
+Reduced Nerve Conduction Velocity 
+
+
+CMT1A rat 
+
+
+Sciatic nerve compound motor action potential (CMAP) 
+
+• Electrical stimulation of nerve / recording from muscle innervated by this nerve 
+• Measure traveling time of electrical impulse from stimulation to recording electrode (“latency”; ms) 
+• Measure size of the response (“amplitude”; mV) 
+• Determine NCV based on distance of electrodes and traveling time of impulse. For more accurate 
+measurements, use recordings at two different sites (distal / proximal) 
+Sereda et al., 1996 
+
+
+
+Therapeutic Reversal of PMP22 Overexpression in CMT1A 
+
+
+Levels of 
+PMP22 
+mRNA 
+expression 
+
+
+
+? 80 - 120% 
+
+1.5-fold PMP22 
+
+Normal 100 % 
+
+gene dosage 
+
+Therapy 
+
+CMT1A 
+
+
+
+Hum Mol Genet. (2001), 10, 1007-1018 
+
+Induced Myelination and Demyelination in a Conditional 
+Mouse Model of Charcot-Marie-Tooth Disease Type 1A 
+
+
+Perea et al. 
+
+Charcot-Marie-Tooth disease type 1A, a hereditary demyelinating neuropathy, is 
+usually caused by overexpression of peripheral myelin protein 22 (PMP22) due to a 
+genomic duplication. We have generated a transgenic mouse model in which mouse 
+pmp22 overexpression can be regulated. In this mouse model, overexpression of 
+pmp22 occurs specifically in Schwann cells of the peripheral nerve and is switched off 
+when the mice are fed tetracycline. Overexpression of pmp22 throughout life (in the 
+absence of tetracycline) causes demyelination. In contrast, myelination is nearly 
+normal when pmp22 overexpression is switched off throughout life by feeding the 
+mice tetracycline. When overexpression of pmp22 is switched off in adult mice, 
+correction begins within 1 week and myelination is well advanced by 3 months 
+(although the myelin sheaths are still thinner than normal), indicating that the 
+Schwann cells are poised to start myelination. Upregulation of the gene in adult mice 
+(which had previously had normal pmp22 expression) is followed by active 
+demyelination within 1 week, which had plateaued by 8 weeks. This indicates that 
+Schwann cells with mature myelin are sensitive to increased amounts of pmp22 such 
+that they rapidly demyelinate. Thus, demyelination can largely be corrected within a 
+few months, but the correction will be sensitive to subsequent upregulation of pmp22. 
+
+
+CMT1A Disease Progression 
+
+
+• Clinical Symptoms: 
+• Nerve Conduction Velocity: 
+• Myelin Pathology: 
+• Axon Pathology: 
+Time 
+
+
+(Distal) Axonal Degeneration in Demyelinating Neuropathies 
+
+
+remyelinated 
+Distal axonal 
+degeneration 
+in a disease 
+that originates 
+exclusively 
+from Schwann 
+cells: Why? 
+
+Steven Scherer 
+
+
+
+Genetic Variability 
+of CMT 
+Genetic Variability 
+of CMT 
+Affected proteins disturb myelinated nerves: “Functional Genetic Screen” 
+Berciano, 2011 
+
+
+
+Common Pathway in Charcot-Marie-Tooth Disease? 
+
+
+
+Demyelinating CMT 
+
+Demyelination followed 
+by axonal damage and 
+degeneration 
+
+Axonal CMT 
+Loss of myelinated axons 
+without demyelination 
+
+
+Normal Axonal CMT 
+
+Nave et al., 2007 
+
+
+Axonal Transport Is a Bottleneck for the Health of Neurons 
+
+
+Nat. Rev. Neurosci. (2013), 14, 161-176. 
+Axonal transport deficits and neurodegenerative diseases 
+
+
+Millecamps and Julien 
+
+
+The intracellular transport of organelles along an axon is crucial for the 
+maintenance and function of a neuron. Anterograde axonal transport has a role 
+in supplying proteins and lipids to the distal synapse and mitochondria for local 
+energy requirements, whereas retrograde transport is involved in the clearance 
+of misfolded and aggregated proteins from the axon and the intracellular 
+transport of distal trophic signals to the soma. Axonal transport can be affected 
+by alterations to various components of the transport machinery. Here, we review 
+the current state of knowledge about axonal transport defects that might 
+contribute to the pathogenesis of particular neurodegenerative diseases. 
+
+In Charcot-Marie-Tooth neuropathies / Alzheimer’s disease and other dementias 
+/ Parkinson’s disease / Huntington’s disease / Motorneuron diseases (direct and/or indirect effects) 
+
+Compare axonal length to size of neuronal cell body 
+
+
+
+Why Are Axons Dying Distally? 
+
+
+Example of a 
+sensory neuron, 
+tried to draw 
+to scale 
+Neurons are the longest cells in body: Transport Problems! 
+
+Steven Scherer 
+
+
+Fast Axonal Transport (Some Main Cargo) 
+
+
+
+(Cytoskeletal elements: Slow axonal transport) Basic Neurochemistry, Siegel et al., 1999 
+
+
+
+http://www.sciencedirect.com/science/article/pii/S0092867412015516 Zala et al., 2013 
+
+
+
+Mutations in Direct Players (Road, Motors, Cargo-Associates) 
+Cause Axonal-Degeneration Diseases in Humans 
+
+
+KIF1A 
+KIF5A 
+RAB7 
+DYNC1H1, DCTN1 
+TUBB3 
+Holzbaur and Scherer, 2011 
+
+
+
+Specific Aims / Conceptual Strategy 
+
+• Understand the cellular and molecular mechanisms 
+underlying the developmental and homeostatic 
+phenomena of myelination and what goes wrong 
+in associated disorders 
+• Generate and analyze suitable (disease) models 
+in animals (and cellular systems) to understand the 
+underlying mechanisms (in comparison to parallel 
+studies in humans): 
+• Combine the knowledge obtained from basic science 
+(i.e. how does the system work?) with preclinical 
+research (i.e. what is the basis of the malfunction?) 
+and extend to applied research (i.e. find a treatment) 
+
+What are Suitable (Disease) Models 
+When and Why? 
+
+
+
+The Zebrafish Model 
+
+
+
+
+Dynamics of Oligodendrocyte Development 
+and Myelination (Zebrafish) 
+
+
+
+Mathews and Appel, 2016 
+
+
+
+Kirby et al., 2006 
+66
+
+
+Kirby et al., 2006 
+
+
+
+Successful Screening for PNS Myelination Mutants in Zebrafish 
+
+
+
+(Kommentar - Textfeld one can increase cAMP a bit and Schwann cells can myelinate better.)
+Adenylate 
+(Kommentar - Textfeld point mutation of gpr126 mutant is here
+)
+(Kommentar - Textfeld oct6 is the transcription factor that leads to that phenotype in the mutant.)
+Cyclase 6 
+
+
+
+(Kommentar - Textfeld gpr126 is essential for myelination. it activates Adcy6.)
+*Phenotype in Zebrafish could be rescued* 
+(Notiz made_
+27.02.2017 10:30:46
+Unmarked festgelegt von made_) 
+with forskolin which elevates cAMP 
+
+Lyons and Talbot, 2014 
+
+
+Unbiased (but Aim-Targeted) Screens 
+(in Suitable Models) Can Lead to 
+Major Discoveries 
+
+
+Robustness of Readouts and Efficient Throughput Are the Keys 
+
+
+
+Hum. Mol. Genet. (2014), 23, 2279-2289. 
+
+Mutations in CNTNAP1 (CASPR) and ADCY6 Are Responsible for Severe 
+Arthrogryposis Multiplex Congenita with Axoglial Defects 
+
+
+Laquérriere et al. 
+
+Non-syndromic arthrogryposis multiplex congenita (AMC) is characterized by multiple 
+congenital contractures resulting from reduced fetal mobility. Genetic mapping and whole 
+exome sequencing (WES) were performed in 31 multiplex and/or consanguineous 
+undiagnosed AMC families. Although this approach identified known AMC genes, we here 
+report pathogenic mutations in two new genes. Homozygous frameshift mutations in 
+CNTNAP1 were found in four unrelated families. Patients showed a marked reduction in 
+motor nerve conduction velocity (<10 m/s) and transmission electron microscopy (TEM) of 
+sciatic nerve in the index cases revealed severe abnormalities of both nodes of Ranvier 
+width and myelinated axons. CNTNAP1 encodes CASPR, an essential component of 
+node of Ranvier domains which underlies saltatory conduction of action potentials along 
+the myelinated axons, an important process for neuronal function. A homozygous 
+missense mutation in adenylate cyclase 6 gene (ADCY6) was found in another family 
+characterized by a lack of myelin in the peripheral nervous system (PNS) as determined 
+by TEM. Morpholino knockdown of the zebrafish orthologs led to severe and specific 
+defects in peripheral myelin in spite of the presence of Schwann cells. ADCY6 encodes a 
+protein that belongs to the adenylate cyclase family responsible for the synthesis of cAMP. 
+Elevation of cAMP can mimic axonal contact in vitro and upregulates myelinating signals. 
+Our data indicate an essential and so far unknown role of ADCY6 in PNS myelination 
+likely through the cAMP pathway. Mutations of genes encoding proteins of Ranvier 
+domains or involved in myelination of Schwann cells are responsible for novel and severe 
+human axoglial diseases. 
+
+
+Am. J. Hum. Genet. (2015), 96, 955-961. 
+Mutations of GPR126 are responsible for severe 
+arthrogryposis multiplex congenita 
+
+Ravenscroft et al. 
+
+Arthrogryposis multiplex congenita is defined by the presence of contractures across two 
+or more major joints and results from reduced or absent fetal movement. Here, we present 
+three consanguineous families affected by lethal arthrogryposis multiplex congenita. By 
+whole-exome or targeted exome sequencing, it was shown that the probands each 
+harbored a different homozygous mutation (one missense, one nonsense, and one 
+frameshift mutation) in GPR126. GPR126 encodes G-protein-coupled receptor 126, which 
+has been shown to be essential for myelination of axons in the peripheral nervous system 
+in fish and mice. A previous study reported that Gpr126(-/-) mice have a lethal 
+arthrogryposis phenotype. We have shown that the peripheral nerves in affected 
+individuals from one family lack myelin basic protein, suggesting that this disease in 
+affected individuals is due to defective myelination of the peripheral axons during fetal 
+development. Previous work has suggested that autoproteolytic cleavage is important for 
+activating GPR126 signaling, and our biochemical assays indicated that the missense 
+substitution (p.Val769Glu [c.2306T>A]) impairs autoproteolytic cleavage of GPR126. Our 
+data indicate that GPR126 is critical for myelination of peripheral nerves in humans. This 
+study adds to the literature implicating defective axoglial function as a key cause of severe 
+arthrogryposis multiplex congenita and suggests that GPR126 mutations should be 
+investigated in individuals affected by this disorder. 
+
+
+What are the Cellular and Molecular 
+Mechanisms Behind these Findings? 
+
+
+What Activates the Pathway? 
+
+
+
+E9-10 E12/13 
+(Mouse) 
+Birth 
+Over P8 
+E: Embryonic 
+P: Postnatal 
+E15/16 
+(Kommentar - Textfeld this one ->
+is myelinating)
+(Differentiation transitions are not fully synchronized in time) 
+
+
+Jessen and Mirsky, 1999 
+
+
+
+Mechanisms of GPR126/ADGRG6 Function 
+
+
+
+Prp (Prion Protein) 
+Null mice develop 
+a Demyelinating 
+Neuropathy (revealed 
+normal function of Prp) 
+
+Neurons: Blue 
+
+Schwann cells (SC): Orange 
+
+Basal lamina maturation is a critical prerequisite for myelination 
+
+Mogha et al., 2016 
+
+
+https://mjlprionsdiseases.files.wordpress.com/2012/04/cjd-prion-in-neurons.jpg 
+
+
+
+The Mouse as Model Organism 
+
+
+
+(Kommentar - Textfeld very important homepage on how to carry out a technique etc. Made by scientists (videos). Use it extensively and learn from it.)
+https://www.jove.com/ 
+
+
+An Introduction to the Laboratory Mouse Mus Musculus 
+
+
+https://www.jove.com/science-education/5129/an-introduction-to-the-laboratory-mouse-mus-musculus 
+
+
+(Kommentar - Textfeld must go via VPn, since it is not publically available
+)
+
+Why the Mouse as Model System 
+
+
+• 
+Mammalian experimental system, highly relevant for disease: 
+Inflammation, immune system, metabolism 
+
+• 
+Standardized behavioral analysis 
+• 
+Myelination is a vertebrate invention, often affected by inflammation 
+• 
+Mammalian specificity, for example complexity of neural progenitor 
+features and regulation of myelination (regional differences) 
+
+Imaging in the Mouse Nervous System 
+
+
+Microglia Neurons 
+
+
+
+Oligodendrocytes 
+
+Axon tracts 
+
+
+Immune cells 
+
+Vasculature 
+
+
+Alzheimer’s disease 
+
+Nerve injury 
+
+Epilepsy 
+
+ALS 
+Spinal cord injury Stroke 
+Tumours 
+
+Neuroinflammation 
+Multiple Sclerosis 
+
+
+
+Longitudinal Imaging in the Mouse 
+
+
+Time-lapse imaging in the living animal provides valuable 
+information on structural reorganization in the intact brain. Here, 
+we introduce a thinned-skull preparation that allows transcranial 
+imaging of fluorescently labeled synaptic structures in the living 
+mouse cortex by two-photon microscopy. 
+
+http://www.jove.com/video/51520/two-photon-vivo-imaging-dendritic-spines-mouse-cortex-using-thinned 
+
+Application to progenitor dynamics: Transgenically-labeled 
+(oligodendroyte) progenitors (white) in the the adult mouse brain 
+after a lesion 
+
+
+http://www.nature.com/neuro/journal/v16/n6/extref/nn.3390-S8.mov 
+
+Hughes et al., 2013 
+
+
+
+Brainbow Mice 
+
+
+
+(Kommentar - Textfeld Cells are labelled with different colors and can be observed individually.)
+Cerebellum 
+
+Hippocampus 
+
+Livet et al., 2007 
+
+
+Motor Axons Cortex 
+
+
+
+Livet et al., 2007 
+
+
+
+Brainbow Mice (Synapses) 
+
+
+
+B6;CBA-Tg(Thy1-Brainbow1.0)HLich/J 
+
+
+Livet et al., 2007 
+
+
+
+Conditional DNA Segment (Gene) Deletion 
+
+The Cre / loxP System 
+
+P*
+
+"Cre Mouse” 
+
+
+"lox"-mouse (allele) 
+Cre DNA / gene (segment) to be deleted 
+
+
+(Kommentar - Textfeld Learn Cre/loxP system. Most other students are familiar with it.)
+Breeding 
+
+
+DNA segment gets deleted 
+depending on specific 
+activity of *Promoter 
+
+• P*: Gene promoter with tissue- (cell type-) specific activity 
+• Cre: Cre recombinase (from bacteria, no target sequences in eukaryotes) 
+• LoxP site(s): Identical 34 bp DNA segment(s); serve as Cre target sequences 
+Most common application: Conditional (cell type-) specific inactivation of a gene 
+
+(Kommentar - Textfeld ER is mutated and does not react to estrogen.)
+Temporally-Controlled (Gene) Alterations 
+
+Chimeric 
+Estroge 
+Artificial estrogen analogue 
+The CreER / loxP System 
+The Cre-ER fusion protein carries a nuclear localization signal 
+that is blocked by HSP90 in the non-induced state 
+
+
+
+Brainbow Mice 
+
+
+Transgenic promoter driving 
+ubiquitous Cre expression 
+(Kommentar - Textfeld those transgenes give rise to these multiple colors that can label the cells, see the tables)
+• Use of lox sites that are 
+functionally incompatible 
+among each other 
+• Multiple copies of 
+transgene integrated 
+in genome (three are 
+illustrated as example) 
+(Use of CreER allows 
+to vary overall efficiency 
+of recombination by 
+varying dose of tamoxifen) 
+
+Livet et al., 2007 
+
+
+
+Application to Myelinating Cells (With Adjusted Transgenic Strategy) 
+
+
+
+Arrowheads 
+indicate 
+Nodes of 
+Ranvier 
+
+
+Oligodenrocytes 
+
+
+Schwann Cells 
+
+
+
+Dumas et al., 2014 
+
+
+
