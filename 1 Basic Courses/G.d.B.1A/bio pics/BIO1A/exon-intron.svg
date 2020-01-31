@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1"
+	 id="svg2" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1196px" height="328px"
+	 viewBox="-469.5 -195 1196 328" enable-background="new -469.5 -195 1196 328" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  width="1143.93" height="278.1" y="346.309" x="-370.005" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g id="g3254" transform="translate(4.5704913,1.5000034)">
+	
+		<rect id="rect2260" x="-184.662" y="-34.25" fill="#666666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"/>
+	
+		<rect id="rect3232" x="-144.662" y="-34.25" fill="#FF6666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="68" height="40"/>
+</g>
+<rect id="rect3236" x="50.908" y="-32.75" fill="#FF6666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="118" height="40"/>
+<g id="g3274" transform="translate(4.5704913,1.5000034)">
+	
+		<rect id="rect3242" x="634.338" y="-34.25" fill="#666666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"/>
+	
+		<rect id="rect3240" x="548.338" y="-34.25" fill="#FF6666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="86" height="40"/>
+</g>
+<rect id="rect3234" x="-72.092" y="-32.75" fill="#99FFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="123" height="40"/>
+<rect id="rect3238" x="168.908" y="-32.75" fill="#99FFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="384" height="40"/>
+<rect id="rect3246" x="153.908" y="84.25" fill="#FF6666" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"/>
+<rect id="rect3248" x="583.908" y="84.25" fill="#99FFFF" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"/>
+<text transform="matrix(1 0 0 1 -148.7205 56.793)" font-family="'ArialMT'" font-size="24">Exon</text>
+<text transform="matrix(1 0 0 1 333.926 56.793)" font-family="'ArialMT'" font-size="24">Intron</text>
+<text transform="matrix(1 0 0 1 87.2795 56.793)" font-family="'ArialMT'" font-size="24">Exon</text>
+<text transform="matrix(1 0 0 1 -43.074 56.793)" font-family="'ArialMT'" font-size="24">Intron</text>
+<text transform="matrix(1 0 0 1 593.2795 56.793)" font-family="'ArialMT'" font-size="24">Exon</text>
+<rect id="rect3244" x="-318.092" y="84.25" fill="#666666" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" width="24" height="24"/>
+<text transform="matrix(1 0 0 1 -282.8982 103.8984)" font-family="'ArialMT'" font-size="24">nicht-translatierte Region (UTR)</text>
+<text transform="matrix(1 0 0 1 189.1018 103.8984)" font-family="'ArialMT'" font-size="24">codierende Sequenz (CDS)</text>
+<text transform="matrix(1 0 0 1 619.1018 103.8984)" font-family="'ArialMT'" font-size="24">Intron</text>
+<text transform="matrix(1 0 0 1 -342.4031 -1.3867)" font-family="'ArialMT'" font-size="24">5&apos;</text>
+<text transform="matrix(1 0 0 1 698.4954 -1.3867)" font-family="'ArialMT'" font-size="24">3&apos;</text>
+<path id="text3327" d="M-179.842,20.629v1.25c0,3.268,0.473,5.453,1.438,6.562c0.965,1.108,2.85,1.688,5.75,1.688h40.188
+	c1.969,0,3.314,0.305,4.062,1s1.125,1.962,1.125,3.812v1.25h2.812v-1.25c0-1.851,0.377-3.117,1.125-3.812s2.156-1,4.125-1h40.125
+	c2.9,0,4.848-0.579,5.812-1.688c0.965-1.109,1.438-3.295,1.438-6.562v-1.25h-2.812v1.375c0,1.837-0.305,3.005-0.875,3.562
+	s-1.762,0.875-3.625,0.875h-40.312c-2.061,0-3.568,0.278-4.5,0.875s-1.547,1.619-1.875,3.062c-0.328-1.443-0.943-2.466-1.875-3.062
+	s-2.439-0.875-4.5-0.875h-40.312c-1.863,0-3.117-0.317-3.688-0.875s-0.812-1.726-0.812-3.562v-1.375H-179.842z"/>
+<path id="path3334" d="M553.127,20.625v1.25c0,3.268,0.473,5.454,1.438,6.562s2.912,1.688,5.812,1.688h48.938
+	c1.969,0,3.314,0.305,4.062,1s1.125,2.025,1.125,3.875v1.188h2.812V35c0-1.85,0.377-3.18,1.125-3.875s2.156-1,4.125-1h48.938
+	c2.9,0,4.785-0.579,5.75-1.688s1.438-3.295,1.438-6.562v-1.25h-2.812V22c0,1.837-0.242,3.005-0.812,3.562s-1.824,0.875-3.688,0.875
+	h-49.062c-2.061,0-3.568,0.278-4.5,0.875s-1.547,1.619-1.875,3.062c-0.328-1.443-0.943-2.466-1.875-3.062s-2.439-0.875-4.5-0.875
+	H560.44c-1.863,0-3.055-0.317-3.625-0.875S555.94,23.837,555.94,22v-1.375H553.127z"/>
+<rect id="rect2260_1_" x="-308.092" y="-32.75" fill="#666666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="40"/>
+<rect id="rect3232_1_" x="-284.092" y="-32.75" fill="#99FFFF" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="104" height="40"/>
+<text transform="matrix(1 0 0 1 -337.7205 56.793)" font-family="'ArialMT'" font-size="24">Exon</text>
+<text transform="matrix(1 0 0 1 -255.074 56.793)" font-family="'ArialMT'" font-size="24">Intron</text>
+<rect id="rect2260_2_" x="-166.092" y="-162.75" fill="#666666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="21"/>
+<g id="g3254_1_" transform="translate(4.5704913,1.5000034)">
+	
+		<rect id="rect2260_4_" x="-146.662" y="-164.25" fill="#666666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="21"/>
+	
+		<rect id="rect3232_2_" x="-106.662" y="-164.25" fill="#FF6666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="68" height="21"/>
+</g>
+<rect id="rect3236_1_" x="-34.092" y="-162.75" fill="#FF6666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="118" height="21"/>
+<g id="g3274_1_" transform="translate(4.5704913,1.5000034)">
+	
+		<rect id="rect3242_1_" x="165.338" y="-164.25" fill="#666666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="21"/>
+	
+		<rect id="rect3240_1_" x="79.338" y="-164.25" fill="#FF6666" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="86" height="21"/>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-308.5" y1="-36" x2="-306.091" y2="-37.789"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.9096,5.9096" x1="-301.347" y1="-41.312" x2="-170.872" y2="-138.2"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-168.5" y1="-139.961" x2="-166.092" y2="-141.75"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-284.092" y1="-32.75" x2="-281.712" y2="-34.577"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.9659,5.9659" x1="-276.979" y1="-38.209" x2="-146.838" y2="-138.107"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-144.471" y1="-139.923" x2="-142.092" y2="-141.75"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-142.092" y1="-141.75" x2="-143.079" y2="-138.917"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.7597,5.7597" x1="-144.975" y1="-133.479" x2="-178.156" y2="-38.302"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-179.104" y1="-35.583" x2="-180.092" y2="-32.75"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-72.092" y1="-32.75" x2="-71.104" y2="-35.583"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.7597,5.7597" x1="-69.208" y1="-41.021" x2="-36.027" y2="-136.198"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-35.079" y1="-138.917" x2="-34.092" y2="-141.75"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="-34.092" y1="-141.75" x2="-32.215" y2="-139.409"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6.2298,6.2298" x1="-28.318" y1="-134.549" x2="47.675" y2="-39.771"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="49.624" y1="-37.34" x2="51.5" y2="-35"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="83.908" y1="-141.75" x2="85.753" y2="-139.384"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5.7489,5.7489" x1="89.288" y1="-134.851" x2="165.296" y2="-37.382"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="167.064" y1="-35.116" x2="168.908" y2="-32.75"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="210.908" y1="-141.75" x2="213.83" y2="-141.069"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6.0067,6.0067" x1="219.68" y1="-139.707" x2="673.062" y2="-34.112"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="675.987" y1="-33.431" x2="678.908" y2="-32.75"/>
+	</g>
+</g>
+<g>
+	<g>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="552.908" y1="-32.75" x2="549.987" y2="-33.429"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6.019,6.019" x1="544.123" y1="-34.792" x2="89.762" y2="-140.39"/>
+		
+			<line fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" x1="86.83" y1="-141.071" x2="83.908" y2="-141.75"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 -196.4031 -143.3867)" font-family="'ArialMT'" font-size="24">5&apos;</text>
+<text transform="matrix(1 0 0 1 221.4954 -145.3867)" font-family="'ArialMT'" font-size="24">3&apos;</text>
+<text transform="matrix(1 0 0 1 -312.5046 -142.3867)" font-family="'Arial-BoldMT'" font-size="28">mRNA</text>
+<text transform="matrix(1 0 0 1 -427.5046 -0.3867)" font-family="'Arial-BoldMT'" font-size="28">DNA</text>
+</svg>
