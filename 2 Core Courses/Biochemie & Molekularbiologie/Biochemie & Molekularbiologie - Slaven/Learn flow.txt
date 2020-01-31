@@ -1,0 +1,65 @@
+--- BEFORE EXAM ---
+
+repeat all the molecules you need to know by heart and cycles
+PLP important
+for Weber-Ban, look at learning goals
+ELONGATION STAGE SCHEME PIC MISSING (protein synthesis pdf 20/35)
+
+-------------------
+
+class biochemistry{
+    doc RG():
+	calculations   = easy;
+	kinetic theory = easy;
+	bio numbers    = easy;
+
+    doc locher():
+	aerobic glyc   = middle;
+	amino acids    = easy;
+	PP pathway     = middle;
+	calculations   = middle;
+	other molecules= easy;
+	theory	       = middle;
+
+    doc ban():
+	theory         = easy;
+	protein recogn = middle;
+
+    doc weber-ban():
+	her part       = kill me;}
+
+LEARN PLAN
+Ban, RG+Lo, Weber-Ban
+
+13.6.2018
+added: key numbers in biology to summary
+
+26.6.
+effectively started with Ban-part
+
+28.6.
+did calculations of RG.
+added: blotting types.
+
+7.7.
+learning Ban-part
+added Cre recombinase.
+RG finished.
+
+9.7.
+started with Weber
+
+10.7.
+Glycogen finished.
+started fat metabolism and DNA biosynthesis.
+
+11.7.
+Fat metabolism and DNA biosynthesis finished (more or less).
+started cholesterol and lipid biosynthesis.
+added answers to cholesterol and lipid biosynthesis pdf.
+
+19.7.
+RG important numbers updated.
+Know all amino acids by heart.
+Added TPP to Locher part.
+Added all important protein complex structures to Ban part.

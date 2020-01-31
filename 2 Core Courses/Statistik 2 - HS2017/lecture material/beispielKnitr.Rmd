@@ -1,0 +1,41 @@
+---
+title: "Beispiel Auswertung"
+author: "Markus Kalisch"
+date: "1 November 2017"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) ## per default wird der Code der Chunks nun immer angezeigt
+library(knitr)
+```
+
+## R Markdown
+```{r generateData}
+n <- 100
+x <- runif(n)
+y <- x + rnorm(n)
+df <- data.frame(x=x, y=y)
+```
+Wir erzeugen einen Datensatz mit einer x- und einer y-Variable und `r n` Datenpunkten. Die Anzahl Datenbunkte in dem letzten Satz wurde direkt aus den Daten abgelesen und in den Text eingefügt (**inline code**)
+
+## Including Plots
+Nun zeichnen wir ein Streudiagramm:
+```{r pressure, echo=FALSE}
+plot(y~x, data =df) ## Wegen der option 'echo=FALSE' wird der Code nicht angezeigt
+```
+
+Anschliessend berechnen wir eine einfache lineare Regression:
+
+```{r linReg}
+fm <- lm(y~x, data = df)
+summary(fm)
+```
+
+
+## Making Tables
+Mit der Funktion *kable* koennen einfach Tabellen erstellt werden:
+```{r table}
+kable(head(df))
+```
+
