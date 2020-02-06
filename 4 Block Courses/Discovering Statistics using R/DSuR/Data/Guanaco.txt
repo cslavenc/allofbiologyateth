@@ -1,0 +1,11 @@
+NonMatingSeason	MatingSeason	MaleID
+2.28	3.04	Khal Drogo
+1.89	3.43	Gregor Clegane
+3.05	2.62	Joffrey Baratheon
+1.91	3.46	Jon Snow
+3.05	2.88	Ramsay Bolton
+3.4	3.32	Petyr Baelish
+2.76	3.81	Theon Greyjoy
+3.71	4.57	Eddard Stark
+2.47	2.75	Tyrion Lannister
+2.66	2.66	Hodor
