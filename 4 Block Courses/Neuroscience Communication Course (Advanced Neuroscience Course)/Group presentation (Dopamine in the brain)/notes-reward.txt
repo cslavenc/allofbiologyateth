@@ -1,0 +1,44 @@
+Maybe for DRUG ADDICTION part:
+Conditioned Place Preference, CCP paradigm
+
+METHODS USED
+optogenetics, DREADDs, agonists/antagonists
+FSCV
+
+
+
+LEARNING/REWARD SEEKING BEHAVIOUR/LTP
+
+small intro
+motivation
+learning
+  -> reinforcement learning and RPE
+reward seeking
+
+Include: non-reward stuff like aversion or salience maybe at end of reward seeking
+DA learning and synaptic plasticity (not a main focus)
+pleasure centers(?)
+
+
+Theories of DA in reward:
+hedonic effects of reward
+reinforcement
+incentive-motivation
+sensorimotor activation
+RPE
+reward learning
+incentive salience attribution
+
+VTA
+VTA DA neurons play a role in CS/US learning. Involved in LTP.
+=> look at CS/VTA DA literature on pubmed
+
+
+
+REFERENCES
+
+
+
+links
+https://en.wikipedia.org/wiki/Reward_system#Pleasure_centers
+https://en.wikipedia.org/wiki/Motivational_salience

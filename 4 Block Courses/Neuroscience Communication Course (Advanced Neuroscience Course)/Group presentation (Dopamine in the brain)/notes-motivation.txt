@@ -1,0 +1,48 @@
+----------------------
+----- MOTIVATION -----
+----------------------
+
+#####
+Katie E. Yoest1, Jennifer A. Cummings1, and Jill B. Becker1,21Department of Psychology, University of Michigan, Ann Arbor, MI2Molecular & Behavioral Neuroscience Institute, University of Michigan, Ann Arbor, MI
+Estradiol, Dopamine and Motivation
+Cent Nerv Syst Agents Med Chem. 2014 ; 14(2): 83–89
+
+Gonodal hormones play a role in motivation => increase in female DA levels in NAcc with estradiol, no change in males.
+Women probably more susceptible to cocaine than males due to sex differences.
+=> motivation via DA is partly influenced by sex. 
+#####
+#####
+XMichael P. Saddoris,1,2 Fabio Cacciapaglia,2,3 XR. Mark Wightman,3 and Regina M. Carelli2
+1Department of Psychology and Neuroscience, University of Colorado Boulder, Boulder, Colorado 80309, and Departments of 2Psychology and
+Neuroscience and 3Chemistry, University of North Carolina Chapel Hill, North Carolina 27599
+Differential Dopamine Release Dynamics in the Nucleus
+Accumbens Core and Shell Reveal Complementary Signals
+for Error Prediction and Incentive Motivation
+The Journal of Neuroscience, August 19, 2015
+
+Phasic DA release encodes different processes and the release happens in different regions of NAcc:
+NAcc core: RPE (learning based theories)
+NAcc shell: incentive salience (reward based theories)
+=> There is a difference in the neurobiological substrate. NAcc is active in both types though.
+=> Core DA release tracks prediction error, shell DA tracks motivationally salient stimuli.
+SL and TL (lever task) used to show differences.
+(last part of discussion also deals with addiction: abstinence based craving is of NAcc shell type).
+#####
+#####
+Cholinergic modulation of mesolimbic dopamine function and reward
+
+~> cholinergic system modulates DA and has implications in drug addiction (cocaine).
+#####
+#####
+Transient receptor potential vanilloid (TRPV3) in the ventral tegmental area of rat:
+Role in modulation of the mesolimbic-dopamine reward pathway
+
+TRPV3 co-expressed in DA neurons in VTA. involved in food reward.
+#####
+
+
+
+
+
+
+

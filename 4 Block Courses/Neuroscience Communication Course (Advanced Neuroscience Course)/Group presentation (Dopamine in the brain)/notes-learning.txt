@@ -1,0 +1,33 @@
+#####
+M. Victoria Puig1,2,*, Evan G. Antzoulatos3, and Earl K. Miller11The Picower Institute for Learning and Memory and Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology, Cambridge, MA 02139, USA3Center for Neuroscience, Department of Neurobiology, Physiology and Behavior, University of California, Davis, CA 95618, USA
+Prefrontal Dopamine in Associative Learning and Memory
+Neuroscience. 2014 December 12; 282: 217–229. doi:10.1016/j.neuroscience.2014.09.026.
+
+PFC plays an initial role in associative learning. It receives DA projections from BG.
+PFC DA needed for early stage of learning, but PFC-BG-loop does not happen when learnt
+behaviour becomes a habit.
+PFC DA neurons involved in reward-prediction (RPE) (motivational value). PFC DA neurons have phasic spikes.
+The PFC spikes are slower than in striatum (=> striatum instructs PFC to look for more abstract rules).
+PFC associative learning is further influenced by serotonine and noradrenaline
+=> not 100% clear what DA neurons perform. Reversal learning (explain what it is) is not affected by
+depletion of orbitofrontal DA, because mainly modulated by serotonin.
+Experiments performed in monkey (visual cues).
+D2 receptors may also contribute to motivation in the PFC. 
+
+REVERSAL LEARNING: Learn that a previously associated rewarding stimuli is no longer rewarding (basically,
+learn the opposite of the past to a stimuli that was positive).
+#####
+#####
+Antony D. Abraham, Kim A. Neve, and K. Matthew Lattal
+Department of Behavioral Neuroscience, Oregon Health & Science University
+Dopamine and extinction: A convergence of theory with fear and
+reward circuitry
+Neurobiol Learn Mem. 2014 February ; 0:65-77.
+
+.......
+#####
+Distributed and Mixed Information in Monosynaptic
+Inputs to Dopamine Neurons
+
+RPE is computed in a distributed, redundant, complex manner. VTA involved.
+#####
