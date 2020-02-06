@@ -1,0 +1,502 @@
+---
+title: 'Session 4: Plotting with ggplot2 + other useful packages'
+date: "28 May 2019"
+output:
+  html_document:
+    self_contained: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+<!-- To render this document: -->
+
+<!-- rmarkdown::render('') -->
+
+<!-- knitr::purl('') -->
+
+
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(cache = 0, cache.path = "cache/", fig.path = "figure/", fig.width = 4, fig.height = 3)
+knitr::opts_knit$set(root.dir = "../data")
+```
+
+```{r, include = FALSE}
+library(BiocStyle)
+print_results <- TRUE
+```
+
+
+```{r libraries, echo = FALSE, results = "hide"}
+suppressPackageStartupMessages({
+  library(ggplot2)
+  library(cowplot)
+  library(dplyr)
+  library(readr)
+  library(tibble)
+  library(ComplexHeatmap)
+})
+```
+
+
+
+# 1) Plotting with ggplot2
+
+
+## Data
+
+We will use the same data you used in Exercise 3 (on Friday). 
+
+```{r eval =T, message = F}
+gapminder <- read_csv(file = "gapminder-FiveYearData.csv")
+```
+
+
+## Basic ggplot call
+
+Basic components of ggplots: 
+
+1. `ggplot(data = ...)`, 
+
+2. `aes(x = ..., y = ..., color = ..., fill = ..., block = ..., shape = ..., size = ...)`, 
+
+3. graphical representation of the data [geometric objects (geoms)](http://ggplot2.tidyverse.org/reference/): `geom_point`, `geom_line`, `geom_boxplot`, `geom_hex`, ...
+
+4. the sign `+` to add layers defined at the end of the line. 
+
+
+Plot gdpPercap vs lifeExp.
+
+Aesthetics defined **globally**:
+
+```{r}
+library(ggplot2)
+
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point()
+
+```
+
+Aesthetics defined **locally**:
+
+
+```{r eval =F}
+
+ggplot() +
+  geom_point(data = gapminder, aes(x = lifeExp, y = gdpPercap)) 
+
+```
+
+Using `aes()` within `geom_point()` gives the same result as using it within `ggplot()`.
+
+## More about aesthetics and data mapping
+
+Let's change the colors, size, shape and the transparency of the points:
+
+
+```{r}
+
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point(color = "blue", size = 8, shape = 18, alpha = 0.2)
+
+```
+
+Let's color the points by the continent
+
+```{r}
+#Use default colors
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  geom_point()
+```
+
+```{r eval=F}
+#Use custome colors
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  geom_point() + 
+  scale_color_manual(values = c("orange", "blue", "green", "red", "pink"))
+```
+
+
+There are other `scale_` options to change the shape, size, linetype, etc. Go to [this link](http://ggplot2.tidyverse.org/reference/scale_manual.html) for ways to implement them. 
+
+Here we change the shape for each continent:
+
+```{r}
+
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = continent, shape = continent)) + 
+  geom_point() +
+  scale_color_manual(values = c("orange", "blue", "green", "red", "pink")) +
+  scale_shape_manual(values = 1:5)
+
+```
+
+
+If we have a continuous variable like `year`, we should use a continuous gradient of colors:
+
+```{r}
+
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = year)) + 
+  geom_point()
+
+```
+
+We can change the color gradient by using for example, the rainbow palette `rainbow()`:
+
+
+```{r eval=F}
+
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = year)) + 
+  geom_point() +
+  scale_color_gradientn(colours = rainbow(10))
+
+```
+
+We use the `colorRampPalette` function to generate a continuous gradient from any set of colors
+
+```{r eval=F}
+library(RColorBrewer)
+
+colors2 <- colorRampPalette(c("red", 'orange', "green", 'darkgreen'))(10)
+
+head(colors2) #is a vector with all the color names
+
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = year)) +
+  scale_colour_gradientn(colours = colors2)
+```
+
+Also commonly used is the `brewer.pal` function to choose a predefined set of colors. Take a look at them [here](https://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/)
+
+```{r eval=F}
+colors2 <- colorRampPalette(brewer.pal(n = 9, name = "YlGnBu"))(20)
+
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = year)) +
+  scale_colour_gradientn(colours = colors2)
+
+```
+
+More gradient scales: http://ggplot2.tidyverse.org/reference/scale_gradient.html
+
+
+## Adjusting axis range
+
+The first two approaches (`scale_x_continuous(limits = c())`, `xlim()`) remove the data points before plotting. This may affect any visualization that uses some summary statistics, for example, boxplots.
+
+```{r}
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  scale_x_continuous(limits = c(40, 70))
+
+```
+
+```{r eval=F}
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  xlim(40, 70)
+```
+
+
+With this approach (`coord_cartesian(xlim = c())`), no data is removed. Only the visible area is adjusted.
+
+```{r}
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  coord_cartesian(xlim = c(40, 70))
+```
+
+
+## Theme
+
+The black and white theme `theme_bw()`:
+
+```{r eval=F}
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  theme_bw()
+```
+
+
+Modify components of a theme [see more here][http://ggplot2.tidyverse.org/reference/theme.html]
+
+```{r}
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  ggtitle("XXX") +
+  xlab("live") +
+  ylab("GDP") +
+  theme(axis.title = element_text(face = "bold"))
+```
+
+
+## Faceting
+
+Let's stratify the plot by continent with `facet_wrap()`:
+
+```{r}
+ggplot(data = gapminder) +
+  geom_point(aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  facet_wrap(~ continent)
+
+```
+
+
+See also `facet_grid()` [here](http://www.cookbook-r.com/Graphs/Facets_(ggplot2)/)
+
+## Other geoms
+
+See http://ggplot2.tidyverse.org/reference/
+
+
+### Histogram
+
+Rather for continuous data.
+
+Histogram of lifeExp:
+
+```{r}
+ggplot(data = gapminder, aes(x = lifeExp)) +
+  geom_histogram(binwidth = 1)
+
+```
+
+Colored by continent:
+
+```{r eval=F}
+ggplot(data = gapminder, aes(x = lifeExp, fill = continent)) + #use fill instead of color
+  geom_histogram(binwidth = 1)
+```
+
+### Density
+
+Distribution of lifeExp represented with density:
+
+```{r}
+ggplot(data = gapminder, aes(x = lifeExp)) +
+  geom_density()
+  
+```
+
+Plot a line per country and color by continent:
+
+```{r eval=F}
+
+ggplot(data = gapminder, aes(x = lifeExp, color = continent, block = country)) +
+  geom_density()
+
+```
+
+
+### Barplot
+
+Rather for discrete data.
+
+Count how many countries there are per continent:
+
+
+```{r}
+
+ggplot(data = gapminder, aes(x = continent)) +
+  geom_bar()
+
+```
+
+### Violin plot + boxplot + jitter
+
+We can plot multiple layers in one figure. 
+
+Let's represent the distributions of gdpPercap for each continent:
+
+
+```{r}
+
+ggplot(data = gapminder, aes(x = continent, y = gdpPercap, color = continent)) +
+  geom_jitter(size = 0.5, alpha = 0.5)
+  #geom_boxplot(outlier.color = NA) +
+  #geom_violin(scale = "width") 
+
+```
+
+## Saving figures
+
+Using `pdf()`, `png()`, `bmp()`, `tiff()`, or `jpeg()` and `dev.off()`:
+
+```{r  eval =F}
+pdf("hist1.pdf")
+ggplot(data = gapminder, aes(x = gdpPercap)) +
+  geom_histogram(bins = 50) 
+dev.off()
+```
+
+Using `ggsave()`:
+
+```{r  eval =F}
+ggplot(data = gapminder, aes(x = gdpPercap)) +
+  geom_histogram(bins = 50) 
+
+ggsave("hist3.pdf")
+#ggsave("hist3.png")
+
+```
+
+Note that you can change the extension file in `ggsave` for any other image format (e.g. jpg, png, tiff), just by changing the file name.
+
+## Multipanel figures with cowplot
+
+See [Introduction to cowplot](https://cran.r-project.org/web/packages/cowplot/vignettes/introduction.html).
+
+
+```{r}
+library(cowplot)
+
+ggp1 <- ggplot(data = gapminder, aes(x = gdpPercap)) +
+  geom_histogram(bins = 50)
+
+ggp2 <- ggplot(data = gapminder, aes(x = gdpPercap)) +
+  geom_density()
+
+plot_grid(ggp1, ggp2, labels = c("A", "B"))
+
+```
+
+
+# 2) Heatmap
+
+## Colors & names
+Let's start by visualizing a simple matrix:
+
+```{r eval =T, message =F}
+mat <- matrix(1, nrow = 20, ncol = 10)
+Heatmap(mat)
+```
+
+We change the legend using `name`.
+```{r eval =T, message =F}
+Heatmap(mat, name = "counts")
+```
+
+
+
+And the color using `col`.
+```{r eval =T, message =F}
+Heatmap(mat, name = "counts", col = "blue")
+```
+
+Each entry value can be visualized separately as a rectangular grid
+```{r eval =T, message =F}
+Heatmap(mat,rect_gp = gpar(col = "white"),
+        name = "counts", col = "blue")
+```
+
+Let's name the matrix and add values to some entries of the matrix.
+```{r eval =T, message =F}
+# name
+colnames(mat) <- paste0("sample", 1:ncol(mat))
+rownames(mat) <- paste0("gene", 1:nrow(mat))
+mat
+# change some entries
+set.seed(1)
+ri <- sample(1:nrow(mat), 5)
+mat[ri, 1:5] <- mat[ri, 1:5] + 1
+mat
+```
+
+## Clustering & Labels
+```{r fig.width = 6, fig.height = 6}
+Heatmap(mat, cluster_rows = FALSE, cluster_columns = FALSE)
+```
+
+Let's move the row labels to the left.
+```{r fig.width = 6, fig.height = 6}
+Heatmap(mat, cluster_rows = FALSE, cluster_columns = FALSE, 
+        row_names_side = "left")
+```
+
+If we prefer to show genes with the same pattern together, we could cluster the rows
+```{r fig.width = 6, fig.height = 6}
+Heatmap(mat, cluster_rows = TRUE, cluster_columns = FALSE, 
+        row_names_side = "left")
+```
+
+```{r}
+ri
+```
+
+## Annotation
+We label the samples by adding annotation to the columns of the heatmap.
+```{r fig.width = 6, fig.height = 6}
+sampAnno <- rep(c("Treated", "Control"), each = 5)
+names(sampAnno) <- colnames(mat)
+sampAnno
+ha1 <- HeatmapAnnotation(group = sampAnno)
+draw(ha1)
+```
+
+```{r fig.width = 6, fig.height = 6}
+Heatmap(mat, top_annotation = ha1, 
+        cluster_rows = TRUE, cluster_columns = FALSE, 
+        row_names_side = "left")
+```
+
+```{r fig.width = 6, fig.height = 6}
+ha2 <- HeatmapAnnotation(group = sampAnno, 
+                        col = list(group = c("Treated" = "orange", "Control" = "grey")))
+Heatmap(mat, top_annotation = ha2, 
+        cluster_rows = TRUE, cluster_columns = FALSE, 
+        row_names_side = "left")
+```
+
+Let's make the matrix have more dynamic values by adding errors simulated from a normal distribution.
+```{r fig.width = 6, fig.height = 6}
+set.seed(2)
+matU <- mat + matrix(rnorm(n = 200, mean = 0, sd = 0.1), nrow = 20)
+Heatmap(matU, top_annotation = ha2, 
+        cluster_rows = TRUE, cluster_columns = TRUE, 
+        row_names_side = "left")
+```
+
+A boxplot in the right part of the figure to show the expression level of each gene.
+```{r fig.width = 6, fig.height = 6}
+ha3 <- rowAnnotation(expLevel = anno_boxplot(matU))
+draw(ha3)
+Heatmap(matU, right_annotation = ha3, 
+        top_annotation = ha2, 
+        cluster_rows = TRUE, cluster_columns = FALSE, 
+        row_names_side = "left")
+```
+
+We might want to compare the expression level of genes between groups. To do this, we draw a scatter plot. The groups are labelled with colors.
+```{r fig.width = 6, fig.height = 6}
+# mm <- t(apply(matU, 1, function(x) {x/sum(x)}))
+# mm <- cbind(rowSums(mm[, 1:5]), rowSums(mm[, 6:10]))
+# ha4 <- rowAnnotation(expLevel = anno_barplot(mm,
+#                      gp = gpar(fill = 2:3, color = 2:3)))
+ha4 <- rowAnnotation(value = anno_points(matU, 
+                                         gp = gpar(col = rep(c("orange", "blue"), each = 5))))
+Heatmap(matU, right_annotation = ha4, 
+        top_annotation = ha2, 
+        cluster_rows = TRUE, cluster_columns = FALSE, 
+        row_names_side = "left")                    
+```
+
+## Legend & Titles
+To add legend for the scatter plot, we can do it as below.
+```{r fig.width = 6, fig.height = 6}
+lg_point = Legend(labels = c("Treat", "Control"), title = "value",
+                  type = "points",
+                  legend_gp = gpar(fill = c("orange", "blue"),
+                                   col = c("orange", "blue")))
+p <- Heatmap(matU, right_annotation = ha4, 
+        top_annotation = ha2, 
+        cluster_rows = TRUE, cluster_columns = FALSE, 
+        row_names_side = "left", 
+        column_title = "Samples")     
+draw(p, heatmap_legend_list = list(lg_point))
+```
+
+## Multiple heatmaps
+
+```{r fig.width = 6, fig.height = 6}
+p + p
+```

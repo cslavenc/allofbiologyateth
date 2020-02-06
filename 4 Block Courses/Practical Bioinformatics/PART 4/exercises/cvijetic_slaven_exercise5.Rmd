@@ -1,0 +1,27 @@
+---
+title: "cvijetic_slaven_exercise5"
+author: "cvijetic_slaven_exercise5"
+date: "29 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/PART 4/data'
+knitr::opts_knit$set(root.dir = wd)
+```
+
+```{r}
+library(Seurat)
+library(scran)
+library(scater)
+library(dplyr)
+library(dplyr)
+library(readr)
+```
+
+I had troubles with my laptop and then I couldn't properly read in the file
+```{r, message=FALSE}
+#filepath <- "https://www.ncbi.nlm.nih.giv/pubmed/24408435"
+#deng <- read_csv(filepath)
+```

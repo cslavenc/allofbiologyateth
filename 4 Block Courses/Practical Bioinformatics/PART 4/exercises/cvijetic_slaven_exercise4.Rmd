@@ -1,0 +1,84 @@
+---
+title: "cvijetic_slaven_exercise4"
+author: "cvijetic_slaven_exercise4"
+date: "28 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/PART 4/data'
+knitr::opts_knit$set(root.dir = wd)
+```
+```{r, message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(RColorBrewer)
+library(cowplot)
+library(ComplexHeatmap)
+```
+
+```{r, message=FALSE}
+gapminder <- read_csv("gapminder-FiveYearData.csv")
+g1 <- ggplot(gapminder, aes(year, lifeExp, color = continent)) + geom_point() + xlab("Year") + ylab("Life expectancy") + theme_grey()
+g1
+
+g1 <- ggplot(gapminder, aes(year, lifeExp, color = continent)) + geom_point() + xlab("Year") + ylab("Life expectancy") + theme_grey() + facet_grid(~continent)
+g1
+
+g1 <- ggplot(gapminder, aes(year, lifeExp, color = continent)) + geom_point() + xlab("Year") + ylab("Life expectancy") + theme_grey() + facet_grid(~continent) + geom_smooth()
+g1
+
+swiss_filtered <- filter(gapminder, country == "Switzerland")
+g1 <- ggplot(gapminder, aes(year, lifeExp, color = continent)) + geom_point() + xlab("Year") + ylab("Life expectancy") + theme_grey() + facet_grid(~continent) + geom_smooth() + theme(legend.position = "bottom") + geom_point(swiss_filtered, mapping = aes(year, lifeExp, color = country))
+g1
+
+os_filtered <- filter(gapminder, continent == "Oceania")
+
+g2 <- ggplot(os_filtered, aes(gdpPercap, lifeExp)) + xlab("GDP per Capita") + ylab("Life expectancy") + theme_grey() + geom_label(aes(label = year)) + facet_wrap(~country)
+g2
+
+g1 <- ggplot(gapminder, aes(year, lifeExp, color = continent)) + geom_point() + xlab("Year") + ylab("Life expectancy") + theme_grey() + facet_grid(~continent) + geom_smooth(aes(color = "black")) + theme(legend.position = "bottom")
+
+g3 <- ggplot(gapminder, aes(year, lifeExp, color = continent)) + geom_point() + xlab("Year") + ylab("Life expectancy") + theme_grey()
+plot_grid(g3,g1)
+
+```
+Question 2
+```{r, message=FALSE}
+library(airway)
+library(edgeR)
+data("airway")
+
+sample_info <- airway %>% colData %>% as.data.frame %>% rename(group = dex) %>% rename(sample = Run) %>% select(sample, group)
+
+# select a subset of data
+expr <- assay(airway)
+dge  <- DGEList(counts = expr, samples = sample_info)
+dge  <- calcNormFactors(dge, method = "TMM")
+dge  <- estimateDisp(dge)
+fit  <- glmFit(dge)
+results <- glmLRT(fit, coef = 2)
+diffG <- rownames(topTags(results, n = 5))
+set.seed(1)
+sameG <- sample(setdiff(rownames(expr), diffG), 15)
+sel <- sample(c(diffG, sameG))
+gene_counts <- expr[sel,]
+
+length(sel)          # 20 samples
+gene_counts
+ncol(gene_counts)
+nrow(gene_counts)
+
+rownames(gene_counts) <- paste0("gene", 1:nrow(gene_counts))
+Heatmap(gene_counts, show_row_dend = FALSE, show_column_dend = FALSE,
+        cluster_rows = TRUE, cluster_columns = TRUE)
+
+group <- sample_info$group
+names(group) <- sample_info$sample
+ha <- HeatmapAnnotation(group = group, col = list(group = c("trt" = "blue", "untrt" = "yellow")))
+#Heatmap(gene_counts, show_row_dend = FALSE, show_column_dend = FALSE,
+#        cluster_rows = TRUE, cluster_columns = TRUE,
+#        top_annotation = ha)
+```

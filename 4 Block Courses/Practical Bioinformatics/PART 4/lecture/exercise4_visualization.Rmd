@@ -1,0 +1,194 @@
+---
+title: "Exercise 4: Plotting with ggplot2 + other useful packages"
+output: 
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(cache = 0, warning = FALSE, message = FALSE, cache.path = "cache/", fig.path = "figure/", fig.width = 8, fig.height = 5)
+```
+
+
+```{r print_solutions, include = FALSE}
+library(BiocStyle)
+print_solutions <- FALSE
+```
+
+```{r, results="hide"}
+library(readr)
+library(dplyr)
+library(RColorBrewer)
+library(ComplexHeatmap)
+library(ggplot2)
+```
+
+# Question 1
+
+For this question, we will continue to use the *gapminder* dataset:
+
+```{r}
+gapminder <- read_csv(file = "../data/gapminder-FiveYearData.csv")
+```
+
+Try to replicate the following plots. You will have to explore other options within the `geoms` and other elements like `theme`. Guide yourself with the material [here](http://ggplot2.tidyverse.org/reference/).
+
+**Optional:** What plot would YOU make to visualise this dataset?
+
+
+```{r, echo = print_solutions}
+
+p1 <- ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = continent)) + 
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 45)) +
+  labs(x = "Year",
+    y = "Life expectancy",
+    colour = "Continent")
+p1
+```
+
+
+```{r, echo = print_solutions}
+
+p2 <- ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = continent)) + 
+  geom_point() + 
+  theme(legend.position = "bottom", axis.text=element_text(size=6), axis.text.x = element_text(angle = 45)) +
+  facet_grid(~continent)
+  
+p2
+```
+
+
+```{r, echo = print_solutions}
+
+p3 <- ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = continent)) + 
+  geom_point(alpha = 0.2) + 
+  geom_smooth() + 
+  theme(legend.position = "bottom", axis.text=element_text(size=6), axis.text.x = element_text(angle = 45)) +
+  facet_grid(~continent) 
+p3
+```
+
+```{r, echo = print_solutions}
+swiss <- gapminder %>% filter(country == "Switzerland")
+
+p4 <- ggplot(data = gapminder, aes(x = year, y = lifeExp, colour = continent)) + 
+  geom_point(alpha = 0.2) + 
+  geom_smooth() + 
+  theme(legend.position = "bottom", axis.text=element_text(size=6), axis.text.x = element_text(angle = 45)) +
+  geom_point(data = swiss, aes(x = year, y = lifeExp, colour = country)) + 
+  facet_grid(~continent) 
+p4
+```
+
+```{r, echo = print_solutions}
+oceania <- gapminder %>% filter(continent == "Oceania")
+
+p5 <- ggplot(data = oceania, aes(x = gdpPercap, y = lifeExp, colour = country)) + 
+  geom_point() + 
+  facet_grid(~country) +
+  geom_label(aes(label = year))
+  
+p5
+```
+
+```{r, echo = print_solutions}
+library(cowplot)
+
+plot_grid(p1,p3, rel_widths = c(1,1))
+
+```
+
+
+# Question 2
+
+For this part, you will create the **Heatmap** using the `airway` dataset from Exercise 3 (on Friday). 
+
+First load the data, which is ready for plotting (you DO NOT have to do anything to it!)
+```{r}
+load("../data/airway_subset.RData")
+```
+
+
+This is the code we used to generate the data. We show it here in case you are interested.
+
+```{r, eval = F}
+# library(airway)
+# library(edgeR)
+# data("airway")
+# 
+# sample_info <- airway %>%
+#     colData %>%
+#     as.data.frame %>%
+#     rename(group = dex) %>%
+#     rename(sample = Run) %>%
+#     select(sample, group)
+# 
+# # select a subset of data
+# expr <- assay(airway)
+# dge <- DGEList(counts = expr, samples = sample_info)
+# dge <- calcNormFactors(dge, method = "TMM")
+# dge <- estimateDisp(dge)
+# fit <- glmFit(dge)
+# results <- glmLRT(fit, coef=2)
+# diffG <- rownames(topTags(results, n = 5))
+# set.seed(1)
+# sameG <- sample(setdiff(rownames(expr), diffG), 15)
+# 
+# sel <- sample(c(diffG, sameG))
+# gene_counts  <- expr[sel, ]
+# 
+# save(gene_counts, sample_info, file = "../data/airway_subset.RData")
+```
+
+
+We will use two tables: `sample_info` and `gene_counts`. Make sure you take a look at them before starting.
+
+1. How many samples are in the `gene_counts`? How many genes are measured? 
+How many samples are measured in each group?
+
+```{r, include = print_solutions}
+
+ncol(gene_counts) #8
+nrow(gene_counts) #20
+table(sample_info$group) #4
+```
+
+
+
+2. Create a simple heatmap to visualize the data.
+```{r, include = print_solutions}
+Heatmap(gene_counts, cluster_rows = FALSE, cluster_columns = FALSE)
+```
+
+3. Improve the heatmap. For example, adjust the size of the gene names, annotate the samples, hide the column dendogram, or use other colors...(Use a nice color palette from [brewer.pal](https://moderndata.plot.ly/create-colorful-graphs-in-r-with-rcolorbrewer-and-plotly/))
+```{r, include = print_solutions}
+groupAnno <- sample_info$group
+names(groupAnno) <- sample_info$sample
+ha <- HeatmapAnnotation(group = groupAnno, 
+                        col = list(group = c("untrt" = "grey", "trt" = "orange")))
+Heatmap(gene_counts, name = "counts", row_names_gp = gpar(fontsize = 8),
+        show_column_dend = FALSE,
+        top_annotation = ha, col= colorRampPalette(rev(brewer.pal(n = 11, name = "Spectral")))(5))
+```
+
+
+
+4. Do you see difference between groups from the heatmap? Provide at least one gene that has different levels between groups.
+```{r, include = print_solutions}
+#"ENSG00000152583" "ENSG00000179094" "ENSG00000120129" "ENSG00000189221" "ENSG00000125148"
+```
+
+
+5. **Optional:** Make boxplots for each gene on the left of the heatmap. [Help here](https://jokergoo.github.io/ComplexHeatmap-reference/book/heatmap-annotations.html#box-annotation)
+
+```{r, include = print_solutions}
+ha2 <- rowAnnotation(bp = anno_boxplot(gene_counts, gp = gpar(col = 1:nrow(gene_counts))))
+Heatmap(gene_counts, right_annotation = ha2,
+        show_column_dend = FALSE,
+        name = "counts", row_names_gp = gpar(fontsize = 8),
+        top_annotation = ha, col= colorRampPalette(rev(brewer.pal(n = 11, name = "Spectral")))(5))
+```
+
+If you want to play around more, you can look for [more ideas](https://jokergoo.github.io/ComplexHeatmap-reference/book/more-examples.html), and customize your Heatmap until you are happy with it.
+

@@ -1,0 +1,193 @@
+---
+title: "Exercise 2: Handling of genomic data and working with ranges"
+output: 
+    html_document:
+    self_contained: yes
+---
+
+```{r setup, include = FALSE}
+library(knitr)
+knitr::opts_chunk$set(cache = 0, warning = FALSE, 
+                      message = FALSE, cache.path = "cache/", 
+                      fig.path = "figure/", 
+                      fig.width = 5, fig.height = 3)
+knitr::opts_knit$set(root.dir = "../data/")
+#library(BiocStyle)
+```
+
+
+```{r print_solutions, include = FALSE}
+print_solutions <- TRUE
+```
+
+# Question 1
+
+
+Suppose that you have measured the same molecular feature with 2 different technologies. For example, say you are presented with DNA methylation observations of the same sample from both the Illumina 450k array^1^ and with reduced representation bisulphite sequencing, or RRBS^2^. Files available for a prostate cancer cell line, LNCaP, from the two technologies are, respectively:
+
+a. LNCAP_450k_chr1.bed.gz
+b. GSM683924_hg19_wgEncodeHaibMethylRrbsLncapDukeSitesRep2_chr1.bed.gz
+
+Both measurements come in BED format^3^, with a row for each CpG dinucleotide that is measured. For the 450k data, the "score" column is the methylation level, a number between 0 and 1000. For the RRBS dataset, the "blockSizes" column (column 11) is the percent methylation (0-100) and the "blockCount" column (column 10) is the coverage (number of reads). A further description of these files can be found at Dave Tang's blog^4^.
+
+Read these files in, overlap them to a common set of coordinates (it is not a perfect overlap) and make a scatter plot of the two measurements. Repeat the plot by subsetting to only those locations with RRBS coverage greater than 10.
+
+Notes: 
+
+* Use the `import` command of the `rtracklayer` layer package to read the BED files into `GRanges` objects (`GRanges` are just containers for genomic ranges).  This can be used for various types of other data types in genomics (e.g., GTF, GFF, bigWig, etc.)
+ 
+* Use `findOverlaps` to find positions that overlap.
+
+
+```{r, echo=print_solutions, eval=print_solutions, fig.width= 8, fig.height=6}
+library(rtracklayer)
+library(GenomicRanges)
+# import data
+k450 <- import("LNCAP_450k_chr1.bed.gz")
+k450
+rrbs <- import("GSM683924_hg19_wgEncodeHaibMethylRrbsLncapDukeSitesRep2.bedRrbs_chr1.bed.gz")
+rrbs
+
+# overlaps, then extraction
+ovl <- findOverlaps(k450, rrbs)
+q <- queryHits(ovl)
+s <- subjectHits(ovl)
+
+par(mfrow=c(1,2))
+plot(score(k450)[q], as.numeric(rrbs$blockSizes)[s], # or k450$score
+     main=paste0("RRBS vs 450k methylation\nAll, corr.=", 
+                 round(cor(score(k450)[q], as.numeric(rrbs$blockSizes)[s]),2)),
+     xlab="450k score (meth. level)", ylab="RRBS (% meth.)")
+
+# Only when RRBS coverage is greater than 10:
+k <- rrbs$blockCount[s] > 10
+plot(score(k450)[q][k], as.numeric(rrbs$blockSizes)[s][k],
+     main=paste0("RRBS vs 450k methylation\nOnly high coverage, corr.=",
+                 round(cor(score(k450)[q][k], as.numeric(rrbs$blockSizes)[s][k]), 2)),
+     xlab="450k", ylab="RRBS")
+
+# The removal of low-coverage reads improves visually the plot and also the correlation between the two methylation coefficients. Low-coverage reads are often technical/ biological noise that are not relevant and should be removed from the analysis. 
+
+```
+
+
+^1^ http://www.illumina.com/products/methylation_450_beadchip_kits.html  
+^2^ http://en.wikipedia.org/wiki/Reduced_representation_bisulfite_sequencing  
+^3^ https://genome.ucsc.edu/FAQ/FAQformat.html#format1  
+^4^ http://davetang.org/muse/2013/05/09/using-encode-methylation-data/ 
+
+# Question 2: 
+
+In this multi-part question, we will look at genomic information (e.g., gene and exon coordinates relative to the genome) and use operations on ranges to pull out accepter-donor sites of genes.
+
+1. Find the provided GTF file `Ensembl_GRCh38.84_hmga2.gtf` on the course server. This file contains the transcript annotation for the human gene HMGA2 from Ensembl release 84. 
+
+Use `import` from R bioconductor package `rtracklayer` to import this file into R. Explore the contents of this `GRanges` object so that you understand what all it contains.  How many transcripts (isoforms) are there for this gene?  What does `transcript_biotype` describe?
+
+```{r, echo = print_solutions, eval=print_solutions}
+### Solution
+# i) import the file into R:
+gtf <- rtracklayer::import("Ensembl_GRCh38.84_hmga2.gtf")
+
+# ii) content
+table(gtf$transcript_id, gtf$transcript_biotype)
+
+# iii) Number of transcripts/ isoforms:
+sum(gtf$type == "transcript")
+# Warning: the following line will return a different number:
+length(unique(gtf$transcript_id))
+# as the first transcript_id is a NA and is also counted. 
+
+# iv) Description of transcript_biotype, copied from Ensembl website: 
+# protein-coding = protein-coding transcripts
+# nonsense_mediated_decay = 'Nonsense-mediated decay indicates that the transcript undergoes nonsense mediated decay, a process which detects nonsense mutations and prevents the expression of truncated or erroneous proteins. This type of transcript is annotated by VEGA/Havana.' [https://www.ensembl.org/Help/View?id=151]
+# retained_intron = 'Retained intron Has an alternatively spliced transcript believed to contain intronic sequence relative to other, coding, variants.' [https://www.ensembl.org/info/genome/genebuild/biotypes.html]
+
+```
+
+2. Select only the exons from the gtf.
+
+```{r, echo = print_solutions, eval=print_solutions}
+### Solution
+# Metadata can be viewed with : 
+names(gtf@elementMetadata)
+exons <- gtf[gtf$type == "exon"]
+length(exons)
+```
+
+
+3. From the exon ranges extracted above, determine the genomic ranges of the introns for HMGA2 transcript ENST00000393577.  
+
+```{r, echo = print_solutions, eval=print_solutions}
+transcript <- exons[exons$transcript_id == "ENST00000393577"]
+introns <- gaps(transcript)
+introns <- introns[-1]  # remove the first gap: empty gap that goes up to the chromsome start
+
+# alternatively
+gaps(transcript, start = min(start(transcript)))
+```
+
+4. From the intron ranges, determine the genomic ranges of the acceptor and donor sites.
+
+```{r, echo = print_solutions, eval=print_solutions}
+### Solution
+seqlevels(introns) <- paste("chr", seqlevels(introns), sep="")
+
+donor_ranges <- resize(introns, 2, fix="start")
+acceptor_ranges <- resize(introns, 2, fix="end")
+
+donor_ranges
+acceptor_ranges
+```
+
+5. Extract the sequence of the accepter-donor sites.  Does this transcript have the canonical accepter-donor site ('GT' donor and "AG" acceptor site)? Note: the genome sequence itself is available from a Bioconductor package BSgenome.Hsapiens.UCSC.hg38 that is already installed.
+
+```{r}
+library("BSgenome.Hsapiens.UCSC.hg38")
+```
+
+```{r, echo = print_solutions, eval=print_solutions}
+### Solution
+getSeq(Hsapiens, acceptor_ranges)
+getSeq(Hsapiens, donor_ranges)
+```
+
+6. Repeat steps 1-5, but for a larger set of transcripts, so that we can get a summary of the distribution of acceptor-donor sites across the genome (to reduce the computation time, you can use the first 50 or so transcripts from a single chromosome; Data file "Homo_sapiens.GRCh38.89_chr22_exons.gtf" with only the exons for chromosome 22 is available). Use import function to load the gtf file into R. Calculate and plot this distribution.
+
+
+```{r, echo = print_solutions, eval=print_solutions}
+gtf_chr22 <- import("Homo_sapiens.GRCh38.89_chr22_exons.gtf")
+# add a 'chr' prefix so that it is better compatible with GRanges
+seqlevels(gtf_chr22) <- paste("chr", seqlevels(gtf_chr22), sep="")
+
+# list for each transcript
+grl <- split(granges(gtf_chr22), gtf_chr22$transcript_id)
+
+# Steps to consider to implement the solution: 
+# 1. from the list of exons get the introns regions via gaps (regions not covered by exons)
+# 2. get the acceptor and donor sites, equal to the 2 nucleotides at start and end
+# 3. set a 'reference' strand and switch the donor/acceptor sites of the other strand
+# 4. get the homo sapiens sequences from the donor and acceptor sites
+# 4.b (facultative), regroup both of them to have one single string of characters
+# 5 representation: barplot of each/both strand for acceptor/ donor/ merged sites
+sites <- lapply(grl[1:100], function(u) {
+  introns <- gaps(u)[-1]
+  
+  ar <- GRanges(seqnames=seqnames(introns), strand=strand(introns),
+                IRanges(start(introns),width=2))
+  dr <- GRanges(seqnames=seqnames(introns), strand=strand(introns),
+                IRanges(end(introns)-1,width=2))
+  
+  if( as.character(strand(ar)[1])=="+") {
+    as <- getSeq(Hsapiens, ar)
+    ds <- getSeq(Hsapiens, dr)
+  } else {
+    as <- getSeq(Hsapiens, dr)
+    ds <- getSeq(Hsapiens, ar)
+  }
+  paste0(as.character(as),"-",as.character(ds))
+})
+
+barplot( table(unlist(sites)), log="y" )
+
+```

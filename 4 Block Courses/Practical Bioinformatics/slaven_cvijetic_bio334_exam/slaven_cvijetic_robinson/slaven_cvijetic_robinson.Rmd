@@ -1,0 +1,40 @@
+---
+title: "slaven_cvijetic_robinson"
+author: "slaven cvijetic"
+date: "31 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/slaven_cvijetic_bio334_exam/slaven_cvijetic_robinson'
+knitr::opts_knit$set(root.dir = wd)
+```
+```{r, message=FALSE}
+library(Biostrings)
+library(GenomicRanges)
+library(ggplot2)
+library(BSgenome.Hsapiens.UCSC.hg38)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(readr)
+```
+
+
+
+
+```{r, message=FALSE}
+load("cytof_dataframes.rda")
+dim(df)
+dim(tsne_df)
+head(df,2)
+head(tsne_df,2)
+
+inner <- df %>% inner_join(tsne_df)
+
+# ggplot
+gg1 <- gpplot(tsne_df, aes(tSNE1, tSNE2)) + geom_point()
+
+```
+

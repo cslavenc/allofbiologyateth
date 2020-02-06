@@ -1,0 +1,4 @@
+hello world
+hello again, use the >> command to append to the end of a file
+grep searches for characters inside files
+chmod +x shellscriptname.sh makes it to a program which you can execute with ./ 

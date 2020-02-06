@@ -1,0 +1,9 @@
+For Bio334 (Andreas Wagner module) you need:
+1. python
+2. cobrapy (see cobrapy_InstallationInstructions)
+3. python packages:
+3.1. numpy
+3.2. scipy
+3.3. tabulate
+3.4. pandas
+3.5. matplotlib

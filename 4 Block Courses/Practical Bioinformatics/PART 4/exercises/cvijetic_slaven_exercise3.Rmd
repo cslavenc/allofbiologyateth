@@ -1,0 +1,67 @@
+---
+title: "cvijetic_slaven_exercise3"
+author: "cvijetic_slaven_exercise3"
+date: "24 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/PART 4/data'
+knitr::opts_knit$set(root.dir = wd)
+```
+
+```{r, message=FALSE}
+library(readr)
+library(dplyr)
+library(tidyr)   # gather()
+library(airway)  # cannot access this library
+library(tibble)
+```
+
+```{r, message=FALSE}
+data(airway)
+head(airway)
+
+md <- as.data.frame(colData(airway))
+expr <- rownames_to_column(as.data.frame(assay(airway)), "feature")
+
+
+threegenes <- expr %>% filter(feature == "ENSG00000000003" | feature == "ENSG00000000005" | feature == "ENSG00000000419")
+
+threegenes <- threegenes %>% gather(sample, counts, -feature) %>% dplyr::rename(gene = feature)
+
+# add dex column
+md$dex
+joined <- md %>% select(Run, dex) %>% dplyr::rename(sample = Run) %>% full_join(threegenes, by = c("sample"))
+
+# rename
+joined <- joined %>% dplyr::rename(condition = dex)  # new name first, then name to be removed
+
+joined %>% group_by(gene) %>% summarise(n=n())
+```
+
+Question 2
+```{r, message=FALSE}
+shrub1 <- read_csv("shrub-volume-data.csv")
+shrub2 <- read_csv("shrub-volume-experiments-table.csv")
+
+shrub1 <- shrub1 %>% mutate(volume = height*length*width)
+shrub1[3:5] <- NULL
+shrub1 <- shrub2 %>% full_join(shrub1, by = c("experiment"))
+shrub1 <- shrub1 %>% filter(site != 4)
+shrub1 <- shrub1 %>% mutate(manipulation = recode(manipulation, "rainout" = "radioactive fallout"))
+
+stat1 <- shrub1 %>% group_by(manipulation) %>% summarise(meanVol = mean(volume), minVol = min(volume), maxVol = max(volume))
+```
+```{r, message=TRUE}
+arrange(stat1, -meanVol)
+
+```
+Question 3
+```{r, message=FALSE}
+ls <- list.files()  # here only the right files are supposed to be
+# use also getFileName() and make own function
+
+
+```

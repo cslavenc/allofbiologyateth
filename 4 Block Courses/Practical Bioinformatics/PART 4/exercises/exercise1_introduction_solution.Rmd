@@ -1,0 +1,183 @@
+---
+title: "Exercise 1: R markdown, automating tasks, FASTA/FASTQ/string processing"
+output: 
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(cache = 0, warning = FALSE, message = 
+                      FALSE, fig.width = 5, fig.height = 3)
+library(BiocStyle)
+```
+
+
+```{r print_solutions, include = FALSE}
+print_solutions <- TRUE
+```
+
+
+# Question 1
+
+Familiarize yourself with how to make an *executable document* that mixes text, R code, R output and graphics using R markdown. Alternatively, you can use an Rscript and convert it to HTML (or PDF) with the `spin()` function (see the [documentation](https://yihui.name/knitr/demo/stitch/) for help).
+
+Exercises for the Robinson section are to be handed in in HTML format. The exercises will only be accepted if the filenames are named systematically: lastname_firstname_exerciseX or lastname_firstname_exerciseX_questionY (e.g., robinson_mark_exercise1.html, robinson_mark_exercise1_question1.html); an easy way to do this is to name your RMD accordingly (e.g., robinson_mark_exercise1.rmd). A link to upload the exercises will be provided. As mentioned in the Introduction, this allows for us to collect attendance / participation, but is primarily for us to identify pitfalls or potential improvements in the submitted R code.
+
+# Question 2
+
+Repeat the following (von Mering) Unix exercise from within R using the `r Biocpkg("Biostrings")` package:
+
+![](../data/ex1_vonMeringUnix.png)
+
+In addition to counting the number of proteins: 
+
+1. generate a histogram of the distribution of protein lengths (you may prefer logarithm of the length). See plot below.
+2. make a table (e.g., data.frame) with three columns: Ensembl protein identifier (e.g., ENSP00000323032), Ensembl transcript identifier (e.g., ENST00000318149), number of amino acids in the protein.
+3. Write this table into a tab-delimited file called `human_protein_lengths.txt`
+
+Notes:  
+* How do you read a FASTA file of protein sequences into an R object?  If a Google search doesn't point you in the right direction (it may not!), know that all Bioconductor packages have landing pages with links to *vignettes* describing various features of a package.  The landing page for Biostrings is [here](https://bioconductor.org/packages/release/bioc/html/Biostrings.html).
+* Probably, you will want to read the protein FASTA file into an `AAStringSet` object and perform operations, such as `names`, `width` and `length` on that object.
+* You will need to parse the names slot of the `AAStringSet` object. Here, you may wish to use the native `strsplit` function or `str_split` from the `stringr` package
+* As always, there are multiple ways to do something and you may find other packages than the ones mentioned here are easier to use.
+
+```{r, echo = print_solutions}
+f <- "ftp://ftp.ensembl.org/pub/release-71/fasta/homo_sapiens/pep/Homo_sapiens.GRCh37.71.pep.all.fa.gz"
+
+library("Biostrings")
+aa <- readAAStringSet(f)
+
+# number of proteins in file
+length(aa)
+
+# histogram of the distribution of protein length
+hist( log2(width(aa)), 100, main="", xlab="(log2) protein lengths" )
+
+# parse strings
+library(stringr)
+nms <- str_split(names(aa), " ", simplify = TRUE)
+
+
+# make data.frame
+df <- data.frame(protein_id=nms[,1], 
+                 transcript_id=gsub("transcript:","",nms[,5]),
+                 length=width(aa))
+head(df)
+
+# write to file
+write.table(df, "human_protein_lengths.txt", 
+            sep="\t", row.names=FALSE, quote=FALSE)
+```
+
+
+# Question 3
+
+Repeat the following (von Mering) Python exercise using the string manipulation facilities in R:
+
+----------
+![](../data/ex1_vonMeringPython.png)
+----------
+
+
+Notes:
+
+* You could use the `gsub` command to replace text in a string and use the `cat` function to write something into
+your document.  Or, the `str_replace`/`str_replace_all` in the `stringr` package.  Or, something else!
+* You can return your result as a vector
+* You can use the code below to define the corrupted string:
+
+```{r}
+dna <- "aACTa TtCcC acCtc\tcaTCC CGGCc\nTaTaT CTGaa"
+```
+
+```{r, echo = print_solutions}
+# Option 1: a set of successive replacements
+dna <- toupper(dna)
+dna <- gsub(" ","\n",dna)
+dna <- gsub("\t","\n",dna)
+#cat(dna,"\n")
+
+# Option 2: use toupper(), replace multiple things at once
+dna <- gsub("[ |\t]","\n",toupper(dna))
+cat(dna,"\n")
+```
+
+
+# Question 4
+
+Repeat the (Shimizu) Python exercise using R's FASTQ processing functions.
+
+![](../data/ex1_ShimizuPython.png)
+
+* Note: we have installed the relevant package(s), but there are no hints given here on how to use it. The point of the exercise is to search the documentation or the web to find out how within R to complete this task.
+
+```{r, echo = print_solutions}
+library(ShortRead)
+library(Biostrings)
+
+fq <- readFastq("../data/", pattern="fq$")
+
+# total number of reads
+length(fq)
+
+# average length of reads
+mean( width(fq) )
+
+# GC content
+af <- alphabetFrequency(sread(fq), as.prob=TRUE)
+gc_freq <- af[,"C"]+af[,"G"]
+mean(gc_freq)
+```
+
+
+# Question 5
+
+Next, we want to use R to automate a small task. We have data (gene expression counts based on RNA-seq) that comes to us as 7 different files for an experiment comparing the transcriptional changes between S2 cells that were untreated (4 samples) versus knocking down a splicing factor (3 samples) called pasilla or CG8144 (Drosophila).  
+
+The files are:  
+S2_DRSC_CG8144_RNAi-1.count  
+S2_DRSC_CG8144_RNAi-3.count  
+S2_DRSC_CG8144_RNAi-4.count  
+S2_DRSC_Untreated-1.count  
+S2_DRSC_Untreated-3.count  
+S2_DRSC_Untreated-4.count  
+S2_DRSC_Untreated-6.count  
+
+Each file contains 2 columns (gene identifier, count):   
+FBgn0000003 0  
+FBgn0000008 115  
+FBgn0000014 0  
+
+We want to perform the same operation on each file: count the number of genes with a count-per-million (CPM) > 1; CPM = 1e6 * count / sum(all counts), that is, the normalized count if the total sum was 1 million and is one way to report expression levels.  
+Write R code to read the files, calculate the CPM and count the number of genes with CPM>1. Return a vector of length 7 (i.e., one for each file). You can choose to use a for loop or lapply/sapply, as you wish.  
+
+Note:  
+* The files are available in the GroupsBio / Bio_334 / Robinson / data directory  
+* First copy the files over to a local directory (perhaps a directory called 'data' in a subfolder called 'exercise1'?) and then write your script
+
+Advanced 1: given the list of filenames in a vector, do this operation in a single line of R code.  
+Advanced 2: write a function to perform this operation (read in a file, calculate CPM, count the number >1 and use this to rewrite your single line of code.
+
+```{r, echo = print_solutions}
+fs <- dir("../data",".count$")
+
+fs <- list.files("../data",".count$", full.names = TRUE)
+
+# Option 1: one liner, not easy to read
+hcps <- sapply(fs, function(u) { d <- read.table(u,sep="\t"); sum( (1e6*d[,2]/sum(d[,2])) > 1 ) })
+
+# a function to read file, calculate CPM, return # > min value
+countHighCPM <- function(f, min=1) {
+  d <- read.table(f,sep="\t")
+  cpm <- 1e6*d[,2]/sum(d[,2])
+  sum(cpm>min)
+}
+
+# Option 2: equivalent to above, easier to read
+hcps <- sapply(fs, countHighCPM)
+hcps
+```
+
+# Question 6 (optional)
+
+Find a data processing or string manipulation exercise from one of the earlier Bio 334 modules and try to re-do the task in R instead of Python.

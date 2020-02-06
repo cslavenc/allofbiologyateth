@@ -1,0 +1,173 @@
+---
+title: "Exercise 3: dplyr and tidyr for data frames"
+output: 
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include = FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(cache = 0, warning = FALSE, message = FALSE, 
+                      cache.path = "cache/", fig.path = "figure/", fig.width = 5, fig.height = 3)
+knitr::opts_knit$set(root.dir = "../data")
+```
+
+```{r print_solutions, include = FALSE}
+print_solutions <- TRUE
+```
+
+Include the packages we will (potentially) use for the exercises in R:
+```{r, results="hide"}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(tibble)
+```
+
+# Question 1
+
+Get a count matrix for RNA-seq data from the [airway](http://bioconductor.org/packages/release/data/experiment/html/airway.html) data set. In this experiment, four different human airway smooth muscle cell lines were treated with dexamethasone. The package provides read counts per gene for four control and the corresponding treatment samples. You can access the data with the following commands:
+
+```{r}
+library(airway) ## load the package
+data("airway")  ## load the data
+```
+
+* Rewrite the following code to fill the data into data frames with `magrittr` pipes
+```{r, eval=FALSE, echo=TRUE}
+md <- as.data.frame(colData(airway))  ## metadata
+expr <- rownames_to_column(as.data.frame(assay(airway)), "feature")  ## count matrix
+```
+
+```{r, include = print_solutions}
+## Solution:
+md <- airway %>% colData %>% as.data.frame  ## metadata
+expr <- airway %>% assay %>% as.data.frame %>% rownames_to_column("feature")  ## count matrix
+```
+
+The variable `md` now contains metadata of the experiment. The column `$dex` tells you which samples were treated with dexamethasone and which were the control samples. Column `$cell` contains the four different cell lines. You can see that we have two samples per cell line: one control and one treatment. The object `expr` contains the count matrix: the columns are the different samples and the rows represent the feature of interest, genes. A count matrix is the starting point for many analyses that you might want to perform with an RNA-seq experiment, e.g. differential gene expression. If you want to visualize the gene counts with ggplot2, you need to transform the count matrix to long format:
+
+* Select the first 3 genes of the count matrix and save it as a new data frame. 
+```{r, include = print_solutions}
+top3 <- expr %>% head(3)
+```
+
+* Transform the new data frame to long format with 3 columns: sample, gene and counts.
+```{r, include = print_solutions}
+rename <- dplyr::rename # Make sure we use dplyr rename
+top3 <- top3 %>% gather("sample", "counts", -feature) %>%
+  rename(gene=feature)
+```
+
+* Add a new column to the data frame with the condition (`dex`) of each sample. The condition and other useful information are stored in the metadata table (`md$dex`).
+
+```{r, echo = print_solutions}
+top3 <- md %>% rownames_to_column("sample") %>% 
+  select(sample, dex) %>%
+  right_join(top3, by=c("sample")) %>%
+  rename(condition=dex)
+top3
+```
+
+* `count` how many samples we have for each gene
+```{r, echo = print_solutions}
+count <- dplyr::count
+top3 %>% count(gene)
+```
+
+# Question 2
+
+Next we use the data from this [Data Carpentry lesson](http://www.datacarpentry.org/semester-biology/assignments/r-data/). You find the data [here](https://datacarpentry.org/semester-biology/data/shrub-volume-data.csv) and [here](http://www.datacarpentry.org/semester-biology/data/shrub-volume-experiments-table.csv).
+
+Dr. Granger is interested in studying the factors controlling the size and carbon storage of shrubs. This research is part of a larger area of research trying to understand carbon storage by plants. She has conducted a small preliminary experiment looking at the effect of three different treatments on shrub volume at four different locations.
+
+* Read the data from the file "shrub-volume-experiment.csv"
+```{r, include = print_solutions}
+shrub_data <- read_csv("shrub-volume-data.csv")
+```
+
+* Replace the three dimension columns with volume column and store the result in a new data frame
+```{r, include = print_solutions}
+shrubs <- shrub_data %>% transmute(site, experiment, volume=length*width*height)
+```
+
+* Join the manipulation from the file "shrub-volume-experiments-table.csv" to the new data frame
+```{r, include = print_solutions}
+shrubs <- shrubs %>% left_join(read_csv("shrub-volume-experiments-table.csv"), by = "experiment")
+```
+
+* After the experiment was finished Dr. Granger noticed that site 4 was partially contaminated with fertilizer. Remove it from the `data.frame`.
+```{r, include = print_solutions}
+shrubs <- shrubs %>% filter(site != 4)
+```
+
+* To clarify the meaning in the `manipulation` column for non-native speakers change "rainout" into "radioactive rainout"
+```{r, include = print_solutions}
+shrubs <- shrubs %>% 
+  mutate(manipulation=recode(manipulation, rainout="radioactive rainout"))
+```
+
+* Show the mean, minimum and maximum volume for each manipulation `arrange`d from highest to lowest mean
+```{r, echo = print_solutions}
+shrubs %>% group_by(manipulation) %>% 
+  summarise(mean_volume=mean(volume), min_volume=min(volume), max_volume=max(volume)) %>% 
+  arrange(desc(mean_volume))
+```
+
+# Question 3
+
+Finally, we are going to repeat a previous exercise. We have data (gene expression counts based on RNA-seq) that comes to us as 7 different files for an experiment comparing the transcriptional changes between S2 cells that were untreated (4 samples) versus knocking down a splicing factor (3 samples) called pasilla or CG8144 (Drosophila).  
+
+The files are:  
+S2_DRSC_CG8144_RNAi-1.count  
+S2_DRSC_CG8144_RNAi-3.count  
+S2_DRSC_CG8144_RNAi-4.count  
+S2_DRSC_Untreated-1.count  
+S2_DRSC_Untreated-3.count  
+S2_DRSC_Untreated-4.count  
+S2_DRSC_Untreated-6.count  
+
+Each file contains 2 columns (gene identifier, count) separated by a tab:   
+FBgn0000003 0
+FBgn0000008 115
+FBgn0000014 0
+
+For each sample we want to count the number of genes with a count-per-million (CPM) > 1; CPM = 1e6 * count / sum(all counts), that is, the normalized count if the total sum was 1 million and is one way to report expression levels. This time, we want to solve it by using data frames and operations from `dplyr`.
+
+* First start by reading in the 7 files, store them in a `data.frame`, add information on the sample to each `data.frame` and bind all data frames together into a single one. Ideally you do this in a loop like lapply. The head of the resulting data frame should look similar to this:
+
+```{r, echo = print_solutions}
+fs <- dir(pattern=".count$")
+gene_expr <- lapply(fs, function(filename){
+  read_tsv(filename, col_names=c('gene','counts')) %>%
+    mutate(sample=as.factor(filename))
+}) %>% bind_rows
+gene_expr %>% head
+```
+
+* Calculate the CPM and count the number of genes with CPM>1.
+```{r, echo = print_solutions}
+gene_expr %>% 
+  group_by(sample) %>% 
+  mutate(cpm=1e6*counts/sum(counts)) %>% 
+  filter(cpm > 1) %>% 
+  count(sample)
+```
+
+* Transform the long count data frame into a count matrix like provided in the first exercise by the airway package with genes as `rownames()` and samples as `colnames()`. Include only genes in row 10 to 15 in the wide format.
+
+```{r, echo = print_solutions}
+slice <- dplyr::slice
+gene_expr_wide <- gene_expr %>% spread(sample, counts) %>% slice(10:15)
+gene_expr_mat <- gene_expr_wide %>% select(-gene) %>% as.matrix()
+rownames(gene_expr_mat) <- gene_expr_wide %>% select(gene) %>% unlist
+
+#Alternatively with the column_to_rownames function from the tibble package
+gene_expr %>% spread(sample, counts) %>%
+  slice(10:15) %>%
+  column_to_rownames("gene") %>%
+  as.matrix %>%
+  head
+```
+
+

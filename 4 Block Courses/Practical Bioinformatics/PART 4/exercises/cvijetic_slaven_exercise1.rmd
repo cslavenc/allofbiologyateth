@@ -1,0 +1,39 @@
+---
+title: "exercise1"
+author: "cvijetic_slaven_exercise1"
+date: "23 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/PART 4/data'
+knitr::opts_knit$set(root.dir = wd)
+```
+
+Import necessary libraries.
+
+```{r, message=FALSE}
+library(Biostrings)
+library(edgeR)
+
+# set working directory  (for .rmd, do: knitr::opts_knit$set(root.dir = wd))
+getwd()
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/PART 4/data'
+setwd(wd)
+```
+
+
+
+QUESTION 2
+```{r, message=FALSE}
+
+# import data
+file <- "ftp://ftp.ensembl.org/pub/release-71/fasta/homo_sapiens/pep/Homo_sapiens.GRCh37.71.pep.all.fa.gz"
+
+proteinData <- readAAStringSet("Homo_sapiens.GRCh37.71.pep.all.fa")
+View(proteinData)
+```
+
+
+

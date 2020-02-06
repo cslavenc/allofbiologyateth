@@ -1,0 +1,50 @@
+---
+title: "cvijetic_slaven_exercise2"
+author: "cvijetic_slaven_exercise2"
+date: "24 Mai 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+wd <- 'C:/Users/made_/Desktop/ETH/4 Block Courses/Practical Bioinformatics/PART 4/data'
+knitr::opts_knit$set(root.dir = wd)
+```
+
+```{r, message=FALSE}
+library(GenomicRanges)
+library(rtracklayer)
+```
+
+The files are in BED format which is loaded with import()
+```{r, message=TRUE}
+# import files
+lncap <- import("LNCAP_450k_chr1.bed")
+gsm <- import("GSM683924_hg19_wgEncodeHaibMethylRrbsLncapDukeSitesRep2.bedRrbs_chr1.bed")
+overlaps <- findOverlaps(lncap,gsm)
+```
+
+```{r, message=FALSE}
+# make a scatter plot
+lncap.hits <- lncap[queryHits(overlaps)]
+gsm.hits <- gsm[subjectHits(overlaps)]
+lncap.score <- lncap.hits$score
+gsm.score <- gsm.hits$blockSizes
+plot(lncap.score,gsm.score)
+
+
+lncap.score2 <- lncap.score[(gsm.hits$blockCount > 10)]
+gsm.score2 <- gsm.score[(gsm.hits$blockCount > 10)]
+
+
+plot(lncap.score2, gsm.score2)
+
+```
+
+```{r, message=FALSE}
+# Question 2
+gtf <- import("Ensembl_GRCh38.84_hmga2.gtf")
+gtfEXONS <- gtf[gtf$type == "exon"]
+trans <- "ENST00000393577"
+gtf2 <- gtfEXONS[gtfEXONS$seqnames == trans]
+```

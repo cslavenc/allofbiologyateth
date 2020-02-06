@@ -1,0 +1,312 @@
+---
+title: "Exercise 3: Dplyr and tidyr for data frames"
+output: 
+  html_document:
+    self_contained: yes
+---
+
+```{r setup, include = FALSE}
+rm(list=ls())
+knitr::opts_chunk$set(cache = 0, warning = FALSE, message = FALSE, cache.path = "cache/", fig.path = "figure/", fig.width = 5, fig.height = 3)
+knitr::opts_knit$set(root.dir = "../data")
+```
+
+Loading the packages
+```{r}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(tibble)
+```
+
+# Data frames
+
+## Reading the data
+
+We use a data set from the the [gapminder](http://www.gapminder.org/) project that you can download [here](https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv).
+As it is a file containing comma separated values (csv) we use `read.csv`:
+```{r}
+gapminder <- read.csv(file="gapminder-FiveYearData.csv")
+```
+
+## Exploring the data
+
+First we can check what data type `read.csv` returned
+
+```{r}
+class(gapminder)
+```
+
+A `data.frame` is a collection of vectors with equal length, but they can have different data types! 
+
+We can have a look at the structure of the data with `str()`:
+
+```{r}
+str(gapminder)
+```
+
+Or alternatively we can look at the first few entries of the data.frame with `head()`
+
+```{r}
+head(gapminder)
+```
+
+The default number of entries selected with `head` is 6, but we can also define the number we want:
+
+```{r}
+head(gapminder, 4)
+```
+
+## Factors
+
+A factor is a categorical variable that can only have a limited number of values. R stores the values internally as integer values that are mapped to the character strings (the `levels`) that they represent.
+
+```{r}
+class(gapminder$country)
+typeof(gapminder$country)
+head(gapminder$country)
+as.character(head(gapminder$country))
+as.integer(head(gapminder$country))
+```
+
+What continents are in the dataset? `levels()`:
+
+```{r}
+levels(gapminder$continent)
+```
+
+How many countries are in it: `nlevels()`:
+
+```{r}
+nlevels(gapminder$country)
+```
+
+Text columns are automatically converted to a factor when reading in data with `read.csv()`! This is the reason why the country column is a factor. You can turn this behaviour off with the option `stringsAsFactors=FALSE`. Or you could use the faster function `read_csv` from the `readr` package, where it is `FALSE` as a default.
+
+```{r}
+gapminder1 <- read.csv(file="gapminder-FiveYearData.csv", stringsAsFactors = FALSE)
+gapminder1 <- read_csv("gapminder-FiveYearData.csv") # Same but faster
+head(gapminder1)
+```
+
+## Pipes
+
+The pipes from the [magrittr](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) package that are included in the `dplyr` package work similar to a unix pipe. You can do more complex things, but today we only use it to pipe the output of a function into the first parameter of the following function, which is the default behaviour. This helps to keep the code readable, when you call many nested functions.
+
+```{r}
+gapminder$country %>% levels %>% head(10)
+# Instead of: head(levels(gapminder$country),10)
+```
+
+## Manipulating data frames with dplyr
+
+We have already seen how to select the top rows of a data frame with `head`. To select arbitrary columns, `dplyr` offers `slice`.
+
+```{r}
+gapminder %>% slice(c(4,6,8))
+```
+
+This is rarely used in practice. Normally you want columns matching a specific criteria and this is done with `filter`. Let's look at the entries for 1987 in Europe:
+
+```{r}
+gapminder %>% filter(year==1987 & continent=="Europe") %>%
+  head
+```
+
+To select specific columns, `dplyr` offers the function `select`:
+
+```{r}
+gapminder %>% select(country, year, pop, gdpPercap) %>%
+  head
+```
+
+If we want to add a column, for example the total gdp, we can do that with `mutate`.
+
+```{r}
+gapminder %>% mutate(gdp = pop*gdpPercap) %>%
+  head
+```
+
+If we want to rename a column, we could do this by a combination of `mutate` and `select`:
+
+```{r}
+gapminder %>% mutate(population=pop) %>%
+  select(-pop) %>% # - translates to select everything but pop
+  head
+```
+
+However, there exists a shortcut called `rename` for this:
+
+```{r}
+gapminder %>% rename(population = pop) %>%
+  head
+```
+
+If we want to combine `mutate`, `select` and `rename` into a single command, we can do that with `transmute`. The following commands:
+
+```{r}
+gapminder %>% rename(population=pop) %>%
+  mutate(gdp=population*gdpPercap) %>%
+  select(country, year, population, gdp) %>%
+  head
+```
+
+simply becomes:
+```{r}
+gapminder %>% transmute(country, year, population=pop, gdp=population*gdpPercap) %>%
+  head
+```
+
+`mutate` cannot only add a column, but also replaces already existing columns with the same name. So if we would want the year to be a factor:
+
+```{r}
+gapminder %>% mutate(year=as.factor(year)) %>%
+  head
+```
+
+If we want to change a specific value in a column to another one that is done with a combination of `recode` and `mutate`:
+```{r}
+gapminder %>% mutate(country=recode(country, "Afghanistan"="Afg.")) %>%
+  filter(year == 1987) %>%
+  head
+```
+
+To summarize some information in the data frame, we can use a combination of `group_by` and `summarise`.
+`group_by` groups rows by their value in the specified columns. All calculations performed over multiple columns are now only considering rows within that group and not the whole data frame. `summarise` works similar to `transmute` but only outputs a single row per group. Let's get the average life expectancy by continent in 1987 and how many countries we have averaged over:
+
+```{r}
+gapminder %>% filter(year == 1987) %>%
+  group_by(continent) %>%
+  summarise(lifeExp=mean(lifeExp), num_countries=n())
+```
+
+## Joining data frames
+
+Let's create some additional information in a data.frame:
+```{r}
+languages <- data.frame(country=c("Germany", "Liechtenstein"), 
+                        language=c("german","german"))
+languages
+```
+
+Let's subsample the gapminder data and only choose Germany and Switzerland from 1987:
+```{r}
+sub <- gapminder %>% filter(year==1987 & (country=="Germany" | country=="Switzerland"))
+sub
+```
+
+To combine the data frames we can use four different joins:
+
+`inner_join` only takes keys that exist in both data frames
+
+```{r}
+sub %>% inner_join(languages, by=c("country"))
+```
+
+`full_join` does the opposite and takes all keys from either data frame:
+
+```{r}
+sub %>% full_join(languages, by=c("country"))
+```
+
+`left_join` takes the keys from the first data frame:
+
+```{r}
+sub %>% left_join(languages, by=c("country"))
+```
+
+`right_join` takes the keys from the second data frame:
+
+```{r}
+sub %>% right_join(languages, by=c("country"))
+```
+
+## Manipulating data frames with tidyr
+
+The subsample of the gapminder data frame we will create is in the so-called long format, where we have one row for each year:
+
+```{r}
+long <- gapminder %>% filter(country %in% c("Germany","Switzerland","France")) %>%
+  select(country, year, lifeExp)
+long
+```
+
+`spread` turns this into the so-called wide format:
+
+```{r}
+wide <- long %>% spread(year, lifeExp)
+wide
+```
+
+Meanwhile, `gather` converts the wide format into the long format:
+
+```{r}
+wide %>% gather(year,lifeExp,-country)
+```
+
+## Be careful: Masking of functions
+
+Including libraries can mask functions.
+
+```{r, message=TRUE}
+library(airway)
+```
+
+In this long information you find for example:
+
+>The following objects are masked from ‘package:dplyr’:
+>
+>    first, rename
+
+So the `dplyr` function `rename` is **masked**. What does this mean? Let's try it out:
+
+```{r, error = TRUE}
+gapminder %>% rename(population=pop) %>% head
+```
+
+We now get an error message that is somewhat difficult to decode. It turns out that the package `S4Vectors`, which is automatically loaded by the `airway` package, implements a new function called `rename`. As it is loaded afterwards, it overwrites or more precisely **masks** the `rename` function of `dplyr`. To call the `dplyr` version of `rename`, we need to add the proper namespace in front of the function:
+
+```{r}
+gapminder %>% dplyr::rename(population=pop) %>% head
+```
+
+If we prefer the `dplyr` version as the default, but loaded the `S4Vectors` package after the `dplyr` package, we can manually change the default:
+
+```{r}
+rename <- dplyr::rename
+gapminder %>% rename(population=pop) %>% head
+```
+
+## Be careful: Row names
+
+Addressing rows by name is considered bad practice by some and not typically done in modern R. Therefore, newer implementations of the `data.frame`, like `tibble` or `data.table`, do not support row names anymore. (Note that in genomics packages, the use of row names is still sometimes used).
+
+```{r}
+named <- gapminder %>% filter(1987 == year) %>% column_to_rownames("country")
+named %>% head
+```
+
+If we convert the `data.frame` with row names into a `tibble`, it simply drops the row names:
+
+```{r}
+named %>% as_tibble %>% head
+```
+
+It is a bit ironic that the `column_to_rownames` function from the `tibble` package only works on data.frames, but not on tibbles.
+
+Some operations automatically convert your `data.frame` into a `tibble` and you are at risk to loose the row names without noticing. Therefore most of the times it is preferred to convert row names into a column with the `rownames_to_column` function from the `tibble` package. Then, conversion do not harm your data:
+
+```{r}
+tib <- named %>% rownames_to_column("country") %>% as_tibble
+tib %>% head
+```
+
+However, some functions still use row names for historic or compatibility reasons with other data types. To use those functions you can quickly get the row names back by:
+
+```{r}
+tib %>% as.data.frame %>% # needed only in case it was converted to another class before
+  column_to_rownames("country") %>%
+  head
+```
+
+
