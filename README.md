@@ -8,7 +8,7 @@ All of Biology @ETH
   </p>
   
   <p>
-    How to get: You can simply download it as a zip file (green button "clone or download")
+    How to get: You can simply download it as a zip file (green button "clone or download").<br>
     Alternatively, open a terminal, and type "git clone https://github.com/cslavenc/allofbiologyateth.git".<br>
   </p>
 </body>
