@@ -1,0 +1,15 @@
+Notes CSS:
+x and y axis of sensor approximately aligned with forward-backward / up-down axis
+
+orienttion of canals (characterized by 1 vector) x: forward-backword, y left-right, z top-down
+
+1) read in data from textfile
+
+biggest acceleration in Y-axis in the beginning
+Counter	Acc_X		Acc_Y		Acc_Z		Gyr_X		Gyr_Y		Gyr_Z	Mag_X	Mag_Y	Mag_Z	Quat_w	Quat_x	Quat_y	Quat_z
+ 1024	4.058783	8.910753	-1.340357	-0.012588	-0.032902	0.219914
+
+ 1) define initial rotation matrix that defines rotation of sensor
+ 2) describe second rotation as a quaternion: find quaternion that describes rotation from gravity aligning with the x-axis
+
+ 3) find orientation of right horizontal canal in the beginning

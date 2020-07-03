@@ -1,0 +1,35 @@
+limitation: abstract 200 words +/- 50 words
+
+Leave the reader with a positive impression after reading the abstract.
+
+Notes to write better abstracts:
+1) Intro to background
+2) Problem definition
+3) Proposed solution
+4) Methods and results
+5) Impact
+6) Style + Understanding + words (overall grade)
+Each of these points gives either 0, 0.5 or 1 point
+
+(for the lecturer, also include number of words)
+
+FEEDBACK
+{If possible it is nice to keep the introduction less abstract.
+Write more accessible.
+It is important to state clearly what the new 
+contributions of the presented work are and what methods they used.
+Be careful keep the story more consistent, e.g. if you say the problem is the mathematical analysis and
+this is what they provide in this paper, then this should also be continued/explained in the later sections.
+}
+
+it becomes more clear if you separate the two concepts/statements: 1) “this-and-this is the current
+problem”. And then: 2) “In this work we are proposing the following solution to this problem”.
+Don’t forget to also indicate the impact of the presented work.
+
+Anything that is not crucial, should be removed. (every words counts)
+Don't become too specific this means.
+Don't go back and forth (avoid talking about something, then something else, then go back etc.).
+Use "we" when talking about "we propose..." etc.
+Introduction (in paper/general): state the state-of-the-art and problems and how it was solved.
+
+"However" in papers is often to introduce the problem.

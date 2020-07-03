@@ -1,0 +1,13 @@
+Rate code
+...
+
+Temporal code
+...
+
+Population code
+...
+-> Hopfield networks
+
+Hebb's rule
+...
+

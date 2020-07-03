@@ -1,0 +1,82 @@
+\documentclass[11pt, english]{article}
+
+\usepackage{fontspec}			% specify fonts
+    \defaultfontfeatures{Ligatures={TeX}} %gedankenstrich
+	%\setmainfont{TeX Gyre Pagella}
+	%\setmainfont{Linux Libertine O}	
+
+% \usepackage[dvips,a4paper,top=2.5cm,left=2.5cm,right=2.5cm,bottom=2.5cm]{geometry} % control page layout
+\usepackage{graphicx}			% embed graphics
+\usepackage[export]{adjustbox}	% enable positioning of graphics
+\usepackage{wrapfig}				% enable textwrapping around figures
+\usepackage{hyperref}					% for better control of hyperlinks and \autoref{} command
+	\hypersetup{colorlinks=false} 		% do not colour links
+	\hypersetup{pdfborder={0 0 0}} 		% no boxes around links (if colorlinks=false)
+\usepackage{babel}		% for German section headers, hyphenation etc. Must stay below hyperref so the section renaming works!
+\usepackage{linguex}			% linguistic examples with glosses
+	\let\eachwordone=\it		% first line of gloss in italics
+\usepackage{mdwlist}			% nice lists
+\usepackage{chronology}
+\usepackage{amsmath}		%enhanced equations
+\usepackage{amsfonts}	%more available symbols in equations
+\usepackage{verbatim}
+\usepackage{natbib}				% control bibliography
+	\setcitestyle{aysep={},citesep={;},notesep={:}}		% set citation style: no separator between author and year, separator between multiple citations = semicolon, separator between citation and postnote (e.g. page number) = colon
+\usepackage{scalefnt}			% arbitrary scaling for font size
+
+\usepackage{abstract}
+\renewcommand{\absnamepos}{flushleft}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+\newcommand{\glosssize}{\scalefont{.85}}			% second line of gloss small
+	\let\eachwordtwo=\glosssize						
+\newcommand{\gender}{\textunderscore}			% separator for genderwashing
+\newcommand{\source}[1]{\hfill (#1)\\[-0.2cm]}	% sources for examples
+\newcommand{\sourcewrap}[1]{\\ \strut \hfill (#1)\\[-0.2cm]}	% sources for examples
+\newcommand{\abrac}[1]{$\langle$#1$\rangle$}		% ⟨angle brackets⟩ with \abrac{}
+\renewcommand{\labelitemi}{$\bullet$}			% change symbol used in lists
+\renewcommand{\labelitemii}{$\circ$}				% change symbol used in lists
+
+\pagenumbering{gobble}
+\renewcommand{\section}[2]{}
+
+\begin{document}
+
+\begin{center}
+
+%\vspace*{3cm} % for prescribed page margins
+
+%	\includegraphics[height=17mm]{grafiken/uzh_logo_d_pos.pdf}\\[0.5cm] % this height is fixed by the university's corporate design rules
+	\Large{%Universität Zürich\\
+	\bfseries Readings in Neuroinformatics} \\[1cm] 
+
+%	{\huge \bfseries titel:\\
+% untertitel}\\[3.5cm]
+
+%	\Large{BA-Arbeit}\\[0.1cm]
+%	\Large{Hauptfach (90 ECTS)} \\[0.1cm]
+%	\Large{Vorgelegt im Juni 2015} \\[1.5cm]
+
+	\Large{ Ephraim Seidenberg}\\[0.1cm]
+%	10-931-798\\[0.1cm]
+%	\Large{ \bfseries Betreuung:}\\[5cm]
+	
+	\vfill
+
+\end{center}
+
+\vspace{1cm}
+
+\bibliographystyle{plainnat}
+\bibliography{absbiblio}
+\nocite{olshausen2005close}
+
+\begin{abstract}
+\normalsize
+The current understanding of the primary visual cortex (V1) is largely dominated by ideas such as the distinction between simple and complex cells or ocular dominance and orientation columns. Models which are based on this can make good predictions as long as parameters such as input stimuli or choice of recorded neurons are kept within a restricted range. They don't describe the full variety of neurons present in V1 and fail under real-world stimuli such as natural images. The theories developed then often have a narrow focus on data and don't explain functional and computational aspects. They also don't account for the vast interconnectivity present in cortex. Here we take a closer look at the limitations of such traditional notions and under what requirements valid findings are possible. We present a solution for each one of five problems with the current view of V1. In particular, we show that the fraction of neurons in V1 with a reliable functional account is about 12-16\% and that it can be increased by measures such as the use of chronically implanted electrodes. We argue for the use of natural stimuli instead of reduced geometrical abstractions such as bars, spots and gratings. Also, we point out the need for further investigation of top-down effects. With the overview we give, further examinations of V1 are directed towards more diverse and true to life experimental paradigms. It is intended to make way for new, broader theories that include the complex relationship to other brain areas.
+\end{abstract}
+
+
+\noindent 249 words.
+\end{document}

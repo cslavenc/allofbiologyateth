@@ -1,0 +1,49 @@
+\contentsline {section}{\numberline {1}PART 1 - Animal Behaviour and Learning}{3}
+\contentsline {subsection}{\numberline {1.1}Different types of learning in animal models}{3}
+\contentsline {subsubsection}{\numberline {1.1.1}Pavlovian learning - S-R learning}{3}
+\contentsline {paragraph}{Examples:}{3}
+\contentsline {paragraph}{Conditioned inhibition:}{3}
+\contentsline {paragraph}{Wagner suprise model and Kamin Block effect.}{3}
+\contentsline {subsection}{\numberline {1.2}Goal-oriented learning}{3}
+\contentsline {subsubsection}{\numberline {1.2.1}Operant conditioning}{3}
+\contentsline {subsubsection}{\numberline {1.2.2}Outcome-response and Response-outcome learning}{3}
+\contentsline {paragraph}{OR-theory.}{4}
+\contentsline {paragraph}{RO-theory.}{4}
+\contentsline {subsubsection}{\numberline {1.2.3}Pavlovian instrumental transfer: PIT = SOR}{4}
+\contentsline {subsection}{\numberline {1.3}The anatomy of the memory system: MTL}{4}
+\contentsline {subsection}{\numberline {1.4}Pathway of the MTL}{4}
+\contentsline {subsection}{\numberline {1.5}Functions of the MTL}{4}
+\contentsline {section}{\numberline {2}PART 2 - Emotional Information Processing}{5}
+\contentsline {subsection}{\numberline {2.1}Rewarding stimuli}{5}
+\contentsline {paragraph}{Reward prediction error.}{5}
+\contentsline {subsubsection}{\numberline {2.1.1}Specific cases: Dopamine and opioids in NAcc}{5}
+\contentsline {subsection}{\numberline {2.2}Aversive stimuli}{5}
+\contentsline {subsection}{\numberline {2.3}MR and GR in emotional learning and stress}{6}
+\contentsline {subsection}{\numberline {2.4}Interaction between NE and Corticosteroids}{6}
+\contentsline {section}{\numberline {3}PART 3 - Animal Models of human affective disorders}{7}
+\contentsline {subsection}{\numberline {3.1}Changes in the neurocircuitry in depression}{7}
+\contentsline {subsection}{\numberline {3.2}Optogenetics}{7}
+\contentsline {subsection}{\numberline {3.3}Endophenotypes: CRFR1 and 5-HTTLPR}{7}
+\contentsline {paragraph}{Example of genotype-environment interaction: 5-HTTLPR.}{8}
+\contentsline {subsection}{\numberline {3.4}Types of tests}{8}
+\contentsline {subsubsection}{\numberline {3.4.1}Chronic Social Defeat (CSD)}{8}
+\contentsline {subsubsection}{\numberline {3.4.2}Chronic Unpredictibale Mild Stress (CUMS)}{9}
+\contentsline {subsubsection}{\numberline {3.4.3}2-way Escape test}{9}
+\contentsline {subsubsection}{\numberline {3.4.4}Forced Swim Test}{9}
+\contentsline {subsubsection}{\numberline {3.4.5}2-Bottle test (sucrose preference test)}{9}
+\contentsline {subsubsection}{\numberline {3.4.6}Water maze}{9}
+\contentsline {subsection}{\numberline {3.5}Depression and the Immune System}{10}
+\contentsline {section}{\numberline {4}PART 4 - Pre-clinical Psychopharmacology}{10}
+\contentsline {subsection}{\numberline {4.1}The serotonin system}{10}
+\contentsline {paragraph}{}{10}
+\contentsline {paragraph}{}{11}
+\contentsline {subsection}{\numberline {4.2}5-HTT gene-linked polymorphic region (5-HTTLPR)}{11}
+\contentsline {subsection}{\numberline {4.3}Next Generation Antidepressants: Agomelatine}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {section}{\numberline {5}Model answers and questions}{12}
+\contentsline {subsection}{\numberline {5.1}Set 1}{12}
+\contentsline {subsection}{\numberline {5.2}Set 2}{13}
+\contentsline {subsection}{\numberline {5.3}Set 3}{14}
+\contentsline {subsection}{\numberline {5.4}Set 4}{15}
+\contentsline {section}{\numberline {6}Model questions and answers}{15}

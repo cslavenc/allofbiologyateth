@@ -1,0 +1,82 @@
+\documentclass[11pt, english]{article}
+
+\usepackage{fontspec}			% specify fonts
+    \defaultfontfeatures{Ligatures={TeX}} %gedankenstrich
+	%\setmainfont{TeX Gyre Pagella}
+	%\setmainfont{Linux Libertine O}	
+
+% \usepackage[dvips,a4paper,top=2.5cm,left=2.5cm,right=2.5cm,bottom=2.5cm]{geometry} % control page layout
+\usepackage{graphicx}			% embed graphics
+\usepackage[export]{adjustbox}	% enable positioning of graphics
+\usepackage{wrapfig}				% enable textwrapping around figures
+\usepackage{hyperref}					% for better control of hyperlinks and \autoref{} command
+	\hypersetup{colorlinks=false} 		% do not colour links
+	\hypersetup{pdfborder={0 0 0}} 		% no boxes around links (if colorlinks=false)
+\usepackage{babel}		% for German section headers, hyphenation etc. Must stay below hyperref so the section renaming works!
+\usepackage{linguex}			% linguistic examples with glosses
+	\let\eachwordone=\it		% first line of gloss in italics
+\usepackage{mdwlist}			% nice lists
+\usepackage{chronology}
+\usepackage{amsmath}		%enhanced equations
+\usepackage{amsfonts}	%more available symbols in equations
+\usepackage{verbatim}
+\usepackage{natbib}				% control bibliography
+	\setcitestyle{aysep={},citesep={;},notesep={:}}		% set citation style: no separator between author and year, separator between multiple citations = semicolon, separator between citation and postnote (e.g. page number) = colon
+\usepackage{scalefnt}			% arbitrary scaling for font size
+
+\usepackage{abstract}
+\renewcommand{\absnamepos}{flushleft}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+\newcommand{\glosssize}{\scalefont{.85}}			% second line of gloss small
+	\let\eachwordtwo=\glosssize						
+\newcommand{\gender}{\textunderscore}			% separator for genderwashing
+\newcommand{\source}[1]{\hfill (#1)\\[-0.2cm]}	% sources for examples
+\newcommand{\sourcewrap}[1]{\\ \strut \hfill (#1)\\[-0.2cm]}	% sources for examples
+\newcommand{\abrac}[1]{$\langle$#1$\rangle$}		% ⟨angle brackets⟩ with \abrac{}
+\renewcommand{\labelitemi}{$\bullet$}			% change symbol used in lists
+\renewcommand{\labelitemii}{$\circ$}				% change symbol used in lists
+
+\pagenumbering{gobble}
+\renewcommand{\section}[2]{}
+
+\begin{document}
+
+\begin{center}
+
+%\vspace*{3cm} % for prescribed page margins
+
+%	\includegraphics[height=17mm]{grafiken/uzh_logo_d_pos.pdf}\\[0.5cm] % this height is fixed by the university's corporate design rules
+	\Large{%Universität Zürich\\
+	\bfseries Readings in Neuroinformatics} \\[1cm] 
+
+%	{\huge \bfseries titel:\\
+% untertitel}\\[3.5cm]
+
+%	\Large{BA-Arbeit}\\[0.1cm]
+%	\Large{Hauptfach (90 ECTS)} \\[0.1cm]
+%	\Large{Vorgelegt im Juni 2015} \\[1.5cm]
+
+	\Large{ Ephraim Seidenberg}\\[0.1cm]
+%	10-931-798\\[0.1cm]
+%	\Large{ \bfseries Betreuung:}\\[5cm]
+	
+	\vfill
+
+\end{center}
+
+\vspace{1cm}
+
+\bibliographystyle{plainnat}
+\bibliography{absbiblio}
+\nocite{gers1999learning}
+
+\begin{abstract}
+\normalsize
+Learning requires the prioritization of some information over other, which in turn needs training. The powerful learning model of Recurrent Neural Networks (RNNs) has recently been refined by the ``Long Short-Term Memory'' (LSTM) model. It allows to bridge time gaps between input events and target signals by the use of ``constant error carrousels'' (CECs). It's training however still relies on a clearly segmented input and is prone to failure when presented with a continual input stream. Here we present a solution to this by introducing ``forget gates''. When activated, they reset memory which has become useless and in this way improve the information prioritization. To examine our model we used a more difficult, continual variant of the ``Embedded Reber Grammar'' problem (CERG) for training and testing, as well as another nonlinear long time task with its continual variant. We found that our LSTM model extended by forget gates was able to solve the continual tasks when the standard LSTM wasn't. For the non-continual task, although taking a bit longer than the standard model, it was able to solve it as well. Our model renders RNNs more biologically plausible since real-world input does not usually present itself with inherent decomposition into subsequences or subtasks, but rather as a continuous stream. Thus, our model is most relevant to tasks as e.g. speech recognition where sequential processing is required.
+\end{abstract}
+
+
+\noindent 226 words.
+\end{document}

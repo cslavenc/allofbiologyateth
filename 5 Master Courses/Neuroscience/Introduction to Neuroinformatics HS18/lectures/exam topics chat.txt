@@ -1,0 +1,51 @@
+species, how many neurons
+brain vs. computer
+
+epsp ipsp
+
+brain weight
+
+nernst equation
+
+goldmann 
+
+
+
+
+valerio: resting potentials and concentrations, general concepts behind equations
+
+cable equation
+
+leak current
+
+where does the action potential originate
+: AXON HILLOCK
+knowing simple receptors
+
+what is analogue and what is digital
+which drug acts on what
+
+
+compare electrical and chemical synapse
+
+hebbs postulate
+
+
+drain of transistor etc
+: drain is just the sink, it's where the current goes to (much like a water sink in the kitchen)
+which is (maybe) an unconnected/open line in a schematic
+
+nfet pfet difference
+
+DPI
+conceptual quiestion about passive leak potassium sodium
+
+excercise of lecture 14 question
+
+differential pair
+
+analog vs digital
+
+epsp ipsp picture
+
+silicon neuron picture

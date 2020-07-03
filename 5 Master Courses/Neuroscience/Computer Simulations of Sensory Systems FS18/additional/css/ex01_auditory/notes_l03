@@ -1,0 +1,23 @@
+Steps Ex.1 
+
+1) read in sound file -> filter / process -> generate a soundfile
+
+Bücher
+
+Buechner: review cochlear implants
+Calero: state of the art implantable cochlea implants
+Harris: Fourier Transforms
+Loizou: Review about cochlear implants in general
+
+Sound data as unsigned integer:
+y-range from 0 - 1024
+
+Sound data as signed integer:
+data "wrapped" around 0
+
+magic commands:
+pwd
+ls
+
+sound as input => linear filter: simulate stimulation of basilar membrane
+tbd: convert output into energy in corresp. time window

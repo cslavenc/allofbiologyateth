@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Exercise 3: Visual System</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:300%7COpen+Sans:700">
+    <link rel="stylesheet" href="Resources/css/lejournal.css">
+    <!--
+    <link href="CompSens.css" rel="stylesheet">    <link href="base.css" rel="stylesheet" type="text/css">    <link href="style.css" rel="stylesheet" type="text/css">    -->
+  </head>
+  <body>
+    <div class="page">
+      <!-- ==== START PAGE HEADER ==== -->
+      <header class="masthead" role="banner">
+        <nav role="navigation">
+          <h1> <img src="Resources/CSS.png" ,="" alt="CSS" title="Computer Simulations of Sensory Systems"
+              id="CSS-icon"> Exercise 3: The Visual System</h1>
+          <ul id="menu">
+            <li><a href="#background">Background</a></li>
+            <li><a href="#exercise">Exercise</a></li>
+            <li><a href="#tips">Tips</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- end page header -->
+      <div class="container">
+        <!-- ==== START MAIN CONTENT ==== -->
+        <main role="main">
+          <article>
+            <!-- ==== START BACKGROUND ==== -->
+            <section class="background">
+              <h2 id="background">Background</h2>
+            <p>The idea of a &quot;visual prosthesis&quot; is not as far fetched
+            as it might seem at first, and a large number of research groups are
+            working on different approaches. A recent overview is this <a
+            href="Retinal_Implants_2016.pdf">Progress in Retinal and Eye
+            Reserach (2016)</a> article.. Some very <a href="http://webvision.med.utah.edu/2012/05/photovoltaic-retinal-prosthesis-with-high-pixel-density/#more-2756">recent developments</a> may allow retinal prostheses without cable, thereby significantly increasing the chance of a successful longtime implants.</p>
+              <!-- end background -->
+
+              <!-- ==== START EXERCISE ==== -->
+
+              <section class="exercise">
+                <h2 id="exercise">Exercise: Simulation of a Retinal/Visual Implant</h2>
+                <h3>Data</h3>
+                <p>All the Files for this exercise are bundled in <a href="Ex_Visual.zip">&quot;Ex_Visual.zip&quot;</a></p>
+                <p>In addition, you can use the following files:</p>
+                    <ul>
+                          <li>Typical standard test images that are often used in image processing (e.g. lena, mandrill, etc.) can also be found at the <a href="http://links.uwaterloo.ca/oldwebsite/bragzone.base.html">Waterloo BragZone</a>.</li>
+                          <li>You can also use one of the following:</li>
+                    </ul>
+                <table border="1" width="80%">
+                <tr>
+                                <td><a href="Images/TheDoor.jpg"><img height="75" border="0" width="100" alt="" src="Images/Small_Door.jpg" /></a></td>
+                                <td><a href="../../Moodle/Vision/Images/Eye.bmp"><img height="75" border="0" width="100" alt="" src="Images/Small_Eye.jpg" /></a></td>
+                                <td><a href="Images/lena.tif"><img height="100" border="0" width="100" alt="" src="Images/Small_Lena.jpg" /></a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="Images/TheDoor.jpg">TheDoor.jpg</a> (146 kB)</td>
+                                <td><a href="../../Moodle/Vision/Images/eye.bmp">eye.bmp</a> (434.kB)</td>
+                                <td>
+                                    <p><a href="Images/lena.tif">lena.tif</a> (769 kB)</p>
+                                    <p>This image also has an <a href="http://ndevilla.free.fr/lena/">interesting story</a> in the world of image processing.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    <ul>
+                          <li>Hans van Hateren hosts a <a href="http://bethgelab.org/datasets/vanhateren/">website with natural images</a> that people often use for training receptive fields, etc.</li>
+                    </ul>
+                <h3>General Requirements</h3>
+            <p>For this exercise you should design a &quot;visual prosthesis&quot;: Write a Pyhon/Matlab program which </p>
+            <ol>
+              <li>Takes a given input image, or - if none is provided - lets you interactively select an  input image</li>
+              <li>In this image, lets you interactively select a fixation point (&quot;ginput&quot;)</li>
+              <li>Calculates the <em>activity in the retinal ganglion cells</em>, and shows the corresponding activity, and</li>
+              <li> Calculates and shows the <em>activity in the primary visual cortex</em>, and</li>
+              <li> Save this image to an out-file.</li>
+            </ol>
+            <h3>Retinal Ganglion Cells</h3>
+            <ul>
+              <li>Assume that the display has a side length of 30 cm, a resolution (for those 30 cm) of 1400 pixels, and is viewed at a distance of 60 centimeter (see Figure below). The radius of the eye is typically 1.25 cm. This lets you convert pixel location to retinal location.</li>
+        </ul>
+            <p><img src="Images/Visual_Implant.jpg" width="500" height="222" alt="Retinal Implant"></p>
+            <ul>
+              <li>We know that the retinal ganglion cells respond best to a &quot;center-surround&quot; stimulus: they show the maximum response when the center is bright and the surrounding dark (&quot;center-on cells&quot;), or vice versa (&quot;center-off cells&quot;). This behavior can be simulated with a &quot;Difference of Gaussians&quot; (DOG)-filter. For this exercise, simulate only &quot;center-on&quot; responses. The figure below shows an section through the receptive field of a typical ganglion cell (DOG with ratio: sigma2 / sigma1 = 1.6). As you see, the sidelength of the receptive field should be about 2*5*sigma1 = 10*sigma1.</li>
+            </ul>
+            <p><img src="Images/mexican_hat.png" width="480" height="320" alt="Mexican Hat"></p>
+            <ul>
+              <li>The receptive field size increases approximately linearly with distance from the fovea. For magnocellular cells, we have approximately RFS [arcmin] = 10 * eccentricity [mm].<br>
+              The parameters are also described in  the <a href="http://en.wikibooks.org/wiki/Sensory_Systems/Visual_System#Computer_Simulation_of_the_Visual_System">wikibook on Sensory Systems</a>, and in the article <a href="CompVisModels.pdf">&quot;Computational models of early human vision&quot;</a> (pdf, 2.2MB). Take these parameter values as approximations: I have found different values in the literature, regarding &quot;size of receptive field&quot;, &quot;size of dendritic field&quot;, &quot;center size&quot;, &quot;visual acuity&quot;, etc, and their exact relation to each other.</li>
+            </ul>
+            <h3>Cells in V1</h3>
+            <ul>
+              <li>Activity in V1 can be simulated by <em>Gabor filters</em> with different orientations. For this
+                  exercise, first only use Gabor filters which respond to vertical lines.</li>
+              <li>Since I have not been able to find explicit information about any dependence of receptive field size on distance from fovea, please assume a constant receptive field size.</li>
+              <li>Input is the original image, not the input from the ganglion cells!</li>
+              <li>When this works, repeat this for activity of Gabor cells with a few different orientations (0 -
+                  30 - 60 - 90 - 120 - 150 deg), to get a &quot;combined image&quot; in V1.</li>
+            </ul>
+              </section>
+              <!-- ==== START TIPS ==== -->
+              <section class="tips">
+                <h2 id="tips">Tips</h2>
+                <h3>Parameters and Results</h3>
+
+                <h3>Matlab</h3>
+                <ul>
+                  <li><a href="Coding/Matlab/Intro_ImgProc.m">Intro_ImgProc</a> shows you how to calculate the radius from a fixation point, and how to apply different filters to different zones.</li><li><a href="Coding/Matlab/FilterTest.zip">FilterTest</a> provides a practical interactive example how visual filters can be imprlemented. Start with the parameters &quot;size = 30&quot;, and &quot;sigma = 5&quot;.</li>
+                  <li><a href="Coding/Matlab/Simple_GUI.zip">Simple_GUI </a> is a stripped-down GUI, which shows how to draw graphs, and how to manipulated / filter data from plots. Note that to get started with GUIs in Matlab, use the Matlab function &quot;guide&quot;.</li>
+                </ul>
+                <h3>Python</h3>
+                <ul>
+                  <li><a href="Coding/Python/gabor_demo.py">gabor_demo.py</a> gives a nice example of how the output of different cells in V1 corresponds to different features of the image.</li>
+                  <li><a href="Coding/Python/Intro_ImgProc.ipynb">Intro_ImgProc.ipynb</a> gives an introduction to image processing with Python</li>
+                  <li><a href="Coding/Python/ImageFiltering.ipynb">ImageFiltering.ipynb</a> shows how to apply different filters to different zones.</li>
+                  </ul>
+                <h3>Interesting Links</h3>
+                <ul>
+                  <li><a href="Visual_System_Links.htm">Optical illusions, the Lena Story etc.</a></li>
+                </ul>
+                <h3>General comments</h3>
+                <ul>
+                  <li>Name the main file <code>Exercise3_Visual.[m/py]</code>
+                    .</li>
+                  <li>For submission of the exercises, please put all the
+                    required code-files that you have written, as well as the
+                    input- &amp; data-files that are required by your program,
+                    into one archive file. ("zip", "rar", or "7z".) Only submit
+                    that one archive-file. Name the archive <code>Ex3_[Submitters_LastNames].[zip/rar/7z]</code>.</li>
+                  <li>Please write your programs in such a way that they run,
+                    without modifications, in the folder where they are
+                    extracted to from the archive. (In other words, please write
+                    them such that I don't have to modify them to make them run
+                    on my computer.) Provide the exact command that is required
+                    to run the program in the comment.</li>
+                  <li>Please comment your programs properly: write a program
+                    header; use intelligible variable names; provide comments on
+                    what the program is supposed to be doing; give the date,
+                    version number, and name(s) of the programmer(s).</li>
+                  <li>To submit the file, go to "Self-Grading of Ex3".</li>
+                </ul>
+                <!-- end tips --> </section>
+            </section>
+          </article>
+          <!-- ==== START PAGE FOOTER ==== -->
+          <footer role="contentinfo" class="footer">
+            <p> created by Th. Haslwanter, May 6, 2018</p>
+          </footer>
+        </main>
+        <!-- end main content -->
+        <!-- ==== START SIDEBAR ==== -->
+        <div class="sidebar">
+          <aside class="links" role="complementary">
+            <h2>Interesting Links</h2>
+            <nav role="navigation">
+              <ul>
+                <li><a href="http://en.wikibooks.org/wiki/Sensory_Systems">Wikibook
+                    Sensory Systems</a></li>
+                <li><a href="https://github.com/thomas-haslwanter/CSS_ipynb">IPYNB-files</a></li>
+                <li><a href="Visual_System_Links.htm">Optical illusions, the Lena Story etc.</a></li>
+                <li><a href="Ex_Visual.zip">ZIP-File containing all the
+                    material for today</a></li>
+              </ul>
+            </nav>
+          </aside>
+          <aside class="learned" role="complementary">
+            <h2>What you should know after this exercise</h2>
+            <ul>
+              <li>Digital representation of visual data</li>
+              <li>Digital image processing</li>
+              <li>The amazing function of the human visual system</li>
+            </ul>
+          </aside>
+        </div>
+        <!-- end sidebar --> </div>
+      <!-- end container --> </div>
+    <!-- end page -->
+  </body>
+</html>

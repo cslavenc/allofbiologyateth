@@ -1,0 +1,68 @@
+Videos
+
+Cellular Mechanisms of Brain Function | EPFL Course
+https://www.youtube.com/channel/UCmB_Ytx1-QmOE52Ch5QjFIA
+
+Action Potential | Bozeman Science
+https://www.youtube.com/watch?v=HYLyhXRp298
+
+Electrochemical Gradient (with links to pretty cool simulations)
+https://www.youtube.com/watch?v=Ba02v7eoVWQ
+
+Nernst Equation (Exercise 3.2)
+https://www.youtube.com/watch?v=EGFYS7PdIzA
+
+Goldmann-Hodgkin-Katz Equation (Exercise 3.3)
+https://www.youtube.com/watch?v=kCEF6HUFoUQ
+
+Cable Properties (Exercise 4.3)
+https://www.youtube.com/watch?v=44vmW1xtESU
+
+Cable Hose Analogy (Exercise 4.3)
+https://www.youtube.com/watch?v=430wqYgZ4oM
+
+Cable Equation Derivation (Exercise 4.3)
+https://www.youtube.com/watch?v=0esTcQAkwRc
+
+Voltage clamp (Exercise 5.2):
+https://www.youtube.com/watch?v=5miWDVRcUUE
+
+Cone of confusion (Exercise 6.1):
+https://www.youtube.com/watch?v=jRBsLUdnjTQ
+
+Animated Videos for all chapters of the Purves Neuroscience book:
+https://neuroscience5e.sinauer.com/
+(Select “Animations” and specific chapter in dropdown select list on top of site)
+
+Synapse | Bozeman Science (Exercises 7 & 8)
+https://www.youtube.com/watch?v=L41TYxYUqqs
+
+Text
+Cable Properties | Neurowiki (Exercise 4.3)
+https://neurowiki.case.edu/wiki/Cable_Properties_I:_Passive_Properties
+
+Inhibitory Postsynaptic Potential | Wikipedia (Exercise 7.2)
+https://en.wikipedia.org/wiki/Inhibitory_postsynaptic_potential
+
+Simulations
+Action potential
+https://phet.colorado.edu/sims/html/neuron/latest/neuron_en.html
+
+Ionotropic and Metabotropic receptors (plus agonist / antagonist explanation)
+https://www.youtube.com/watch?v=NXOXZ-kaSVI
+
+
+Neurons as Temporal Filters , Linear/Spatial Filtering etc. etc.
+Probably where Benni got his slides in lecture 6 as of slide 37 from (or they from him..?):
+Literally the exact copy, but with good explanations in case you missed that part of the lecture !! 
+https://www.coursera.org/lecture/computational-neuroscience/2-2-neural-encoding-simple-models-ZWjK0
+
+
+Plasticity
+Hippocampus, memory consolidation - patient H.M. 
+https://www.youtube.com/watch?v=KkaXNvzE4pk
+
+
+
+
+

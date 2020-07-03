@@ -1,0 +1,83 @@
+\documentclass[11pt, english]{article}
+
+\usepackage{fontspec}			% specify fonts
+    \defaultfontfeatures{Ligatures={TeX}} %gedankenstrich
+	%\setmainfont{TeX Gyre Pagella}
+	%\setmainfont{Linux Libertine O}	
+
+% \usepackage[dvips,a4paper,top=2.5cm,left=2.5cm,right=2.5cm,bottom=2.5cm]{geometry} % control page layout
+\usepackage{graphicx}			% embed graphics
+\usepackage[export]{adjustbox}	% enable positioning of graphics
+\usepackage{wrapfig}				% enable textwrapping around figures
+\usepackage{hyperref}					% for better control of hyperlinks and \autoref{} command
+	\hypersetup{colorlinks=false} 		% do not colour links
+	\hypersetup{pdfborder={0 0 0}} 		% no boxes around links (if colorlinks=false)
+\usepackage{babel}		% for German section headers, hyphenation etc. Must stay below hyperref so the section renaming works!
+\usepackage{linguex}			% linguistic examples with glosses
+	\let\eachwordone=\it		% first line of gloss in italics
+\usepackage{mdwlist}			% nice lists
+\usepackage{chronology}
+\usepackage{amsmath}		%enhanced equations
+\usepackage{amsfonts}	%more available symbols in equations
+\usepackage{verbatim}
+\usepackage{natbib}				% control bibliography
+	\setcitestyle{aysep={},citesep={;},notesep={:}}		% set citation style: no separator between author and year, separator between multiple citations = semicolon, separator between citation and postnote (e.g. page number) = colon
+\usepackage{scalefnt}			% arbitrary scaling for font size
+
+\usepackage{abstract}
+\renewcommand{\absnamepos}{flushleft}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+
+\newcommand{\glosssize}{\scalefont{.85}}			% second line of gloss small
+	\let\eachwordtwo=\glosssize						
+\newcommand{\gender}{\textunderscore}			% separator for genderwashing
+\newcommand{\source}[1]{\hfill (#1)\\[-0.2cm]}	% sources for examples
+\newcommand{\sourcewrap}[1]{\\ \strut \hfill (#1)\\[-0.2cm]}	% sources for examples
+\newcommand{\abrac}[1]{$\langle$#1$\rangle$}		% ⟨angle brackets⟩ with \abrac{}
+\renewcommand{\labelitemi}{$\bullet$}			% change symbol used in lists
+\renewcommand{\labelitemii}{$\circ$}				% change symbol used in lists
+
+\pagenumbering{gobble}
+\renewcommand{\section}[2]{}
+
+\begin{document}
+
+\begin{center}
+
+%\vspace*{3cm} % for prescribed page margins
+
+%	\includegraphics[height=17mm]{grafiken/uzh_logo_d_pos.pdf}\\[0.5cm] % this height is fixed by the university's corporate design rules
+	\Large{%Universität Zürich\\
+	\bfseries Readings in Neroinformatics} \\[1cm] 
+
+%	{\huge \bfseries titel:\\
+% untertitel}\\[3.5cm]
+
+%	\Large{BA-Arbeit}\\[0.1cm]
+%	\Large{Hauptfach (90 ECTS)} \\[0.1cm]
+%	\Large{Vorgelegt im Juni 2015} \\[1.5cm]
+
+	\Large{ Ephraim Seidenberg}\\[0.1cm]
+%	10-931-798\\[0.1cm]
+%	\Large{ \bfseries Betreuung:}\\[5cm]
+	
+	\vfill
+
+\end{center}
+
+\vspace{1cm}
+
+\bibliographystyle{unified-caps}
+\bibliography{absbiblio}
+\nocite{hecht1942energy}
+
+\begin{abstract}
+\normalsize
+Light is detected by the eye through the transformation of visual purple molecules. According to physical laws, one absorbed light quantum already causes the molecule to change. Exactly how many such transformations are needed for a visual stimulus to be detected by the eye? In the work we present here, we have determined the threshold values to answer this question. For our measurements we designed an optical system that allows both the experimenter to control the exact stimulus energy with a precision shutter, and the subject to choose the moment of exposure to the stimulus. If the subject reported a flash after opening the shutter, the threshold value was reached. The values yielded from seven subjects range between $2.1$ and $5.7 \times 10^{-10}$ ergs at the cornea, which corresponds to between 54 and 148 quanta of blue-green light. By correcting for physiological properties of the eye, this range reduces to between 5 and 14 quanta, representing the actually occurring molecular transformations for the production of a visual effect. This result was confirmed by the high agreement with the range of 5 to 8 quanta derived from our independent statistical study of the relation between the intensity of a light flash and the frequency with which it is seen. From these results we further conclude that the stimulus varies at the threshold, determining the fluctuations found between response and stimulus. Our findings add to the understanding of the visual receptor process and provide a basis for further examination.
+\end{abstract}
+
+
+
+\noindent 245 words.
+\end{document}
