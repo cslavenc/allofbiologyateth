@@ -14,7 +14,7 @@ All of Biology @ETH
     Most needed: <ul>
       <li> 2nd year profiles: "Zellbiologie" and "Biologische Chemie"
       <li> 3rd year: Most block courses
-      <li> Master: All except for "Neuroscience" (will be added in the future)
+      <li> Master: All (except Neurosciences)
   </ul>
   Any contribution/collaboration is much appreciated!
   </p>
