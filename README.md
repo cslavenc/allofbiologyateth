@@ -5,7 +5,7 @@ All of Biology @ETH
   <p>
     Feel free to share this with anyone who might need it!<br>
     (only accessible via link: https://github.com/cslavenc/allofbiologyateth.git)<br>
-    <b>Keep in mind that this repository will be updated every now and then. Visiting/Downloading it time and again will keep you up to date!<b>
+    <b>Keep in mind that this repository will be updated every now and then. Visiting/Downloading it time and again will keep you up to date!</b>
   </p>
   
   <p>
